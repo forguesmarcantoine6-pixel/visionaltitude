@@ -123,7 +123,7 @@
     .site-header .brand {
       position: absolute;
       left: max(20px, calc((100vw - 1180px) / 2));
-      width: 152px;
+      width: 220px;
       overflow: hidden;
       flex: 0 0 auto;
       line-height: 0;
@@ -134,14 +134,16 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      opacity: 1;
+      opacity: 0;
       pointer-events: none;
-      background: url("vision-altitude-logo-shine-animated-smooth.webp") center / contain no-repeat;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.34));
+      background: url("vision-altitude-logo-horizontal.png") center / contain no-repeat;
+      clip-path: polygon(-36% 0, -18% 0, 18% 100%, 0% 100%);
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
+      mix-blend-mode: screen;
+      animation: headerLogoShine 10s ease-in-out 10s infinite;
     }
 
     .site-header.is-scrolled .brand::after {
-      opacity: 1;
       filter:
         brightness(0)
         saturate(100%)
@@ -149,9 +151,37 @@
         sepia(28%)
         saturate(1294%)
         hue-rotate(174deg)
-        brightness(96%)
-        contrast(96%)
-        drop-shadow(0 0 8px rgba(31, 58, 95, 0.38));
+        brightness(112%)
+        contrast(112%)
+        drop-shadow(0 0 8px rgba(31, 58, 95, 0.52));
+      mix-blend-mode: normal;
+    }
+
+    @keyframes headerLogoShine {
+      0% {
+        opacity: 0;
+        clip-path: polygon(-36% 0, -18% 0, 18% 100%, 0% 100%);
+      }
+
+      4% {
+        opacity: 0.92;
+        clip-path: polygon(-28% 0, -10% 0, 26% 100%, 8% 100%);
+      }
+
+      14% {
+        opacity: 0.92;
+        clip-path: polygon(78% 0, 96% 0, 132% 100%, 114% 100%);
+      }
+
+      20% {
+        opacity: 0;
+        clip-path: polygon(98% 0, 116% 0, 152% 100%, 134% 100%);
+      }
+
+      100% {
+        opacity: 0;
+        clip-path: polygon(98% 0, 116% 0, 152% 100%, 134% 100%);
+      }
     }
 
     .site-header.is-scrolled .brand,
@@ -161,7 +191,7 @@
 
     .brand-logo {
       width: 100%;
-      max-width: 152px;
+      max-width: 220px;
       height: auto;
       display: block;
       position: relative;
@@ -247,7 +277,7 @@
     }
 
     .home-page .brand-logo {
-      width: 152px;
+      width: 220px;
     }
 
     @media (min-width: 861px) {
@@ -1535,9 +1565,9 @@
     .footer-inner {
       width: var(--container);
       margin: 0 auto;
-      padding: 46px 0 34px;
+      padding: 42px 0 30px;
       display: grid;
-      grid-template-columns: minmax(170px, 0.9fr) repeat(5, minmax(116px, auto));
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
       gap: 24px;
       align-items: start;
     }
@@ -1551,7 +1581,7 @@
     }
 
     .footer-brand .brand-logo {
-      width: 170px;
+      width: 150px;
       filter: brightness(0) invert(1);
     }
 
@@ -1567,6 +1597,7 @@
       font-size: 0.92rem;
     }
 
+    .footer-contact h2,
     .footer-column h2 {
       margin: 0 0 6px;
       color: var(--paper);
@@ -1581,6 +1612,26 @@
       transition: color 0.2s ease;
     }
 
+
+
+    .footer-legal-column {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .footer-copyright {
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    .footer-copyright-bottom {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 18px 0 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+    }
+
     .footer-column a:hover,
     .footer-column a:focus-visible,
     .footer-contact a:hover,
@@ -1593,8 +1644,95 @@
       margin: 0 auto;
       padding: 18px 0 26px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.46);
+      color: rgba(255, 255, 255, 0.58);
       font-size: 0.9rem;
+    }
+
+
+
+    .footer-bottom {
+      grid-column: 1 / -1;
+      width: 100%;
+      margin: 10px 0 0;
+      padding: 18px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px 22px;
+      align-items: center;
+    }
+
+    .footer-bottom .copyright {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      border-top: 0;
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .legal-links a {
+      transition: color 0.2s ease;
+    }
+
+    .legal-links a:hover,
+    .legal-links a:focus-visible {
+      color: var(--sky-light);
+    }
+
+    .legal-page .legal-hero h1 {
+      max-width: 920px;
+    }
+
+    .legal-page .legal-hero p {
+      max-width: 760px;
+    }
+
+    .legal-content {
+      padding: 88px 0 104px;
+    }
+
+    .legal-readable {
+      max-width: 900px;
+    }
+
+    .legal-section {
+      padding: 0 0 34px;
+      margin: 0 0 34px;
+      border-bottom: 1px solid rgba(31, 58, 95, 0.12);
+    }
+
+    .legal-section:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .legal-section h2 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .legal-section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
     }
 
     .reveal {
@@ -1634,10 +1772,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
-      .site-header .brand::after {
-        display: none;
-      }
       *,
       *::before,
       *::after {
@@ -1663,6 +1797,11 @@
         transform: none;
         filter: none;
         animation: none;
+      }
+
+      .site-header .brand::after {
+        display: block;
+        animation: headerLogoShine 10s ease-in-out 10s infinite !important;
       }
     }
 
@@ -4320,28 +4459,15 @@
       }
 
       .home-page .brand-logo {
-        width: 132px;
+        width: 170px;
       }
 
       .site-header .brand {
-        width: 132px;
+        width: 170px;
       }
 
       .site-header .brand::after {
         display: block;
-      }
-
-      .sub-page .site-header .brand::after {
-        filter:
-          brightness(0)
-          saturate(100%)
-          invert(20%)
-          sepia(28%)
-          saturate(1294%)
-          hue-rotate(174deg)
-          brightness(96%)
-          contrast(96%)
-          drop-shadow(0 0 8px rgba(31, 58, 95, 0.38));
       }
 
       .sub-page .site-header .brand-logo,
@@ -4509,11 +4635,11 @@
 
     @media (max-width: 620px) {
       .site-header .brand {
-        width: 132px;
+        width: 170px;
       }
 
       .brand-logo {
-        width: 132px;
+        width: 170px;
       }
 
       .hero {
