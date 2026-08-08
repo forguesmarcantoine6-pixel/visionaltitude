@@ -136,11 +136,12 @@
       z-index: 2;
       opacity: 1;
       pointer-events: none;
-      background: url("vision-altitude-logo-shine-overlay-smooth.webp") center / contain no-repeat;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.44));
+      background: url("vision-altitude-logo-shine-animated-smooth.webp") center / contain no-repeat;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.34));
     }
 
     .site-header.is-scrolled .brand::after {
+      opacity: 1;
       filter:
         brightness(0)
         saturate(100%)
@@ -148,9 +149,9 @@
         sepia(28%)
         saturate(1294%)
         hue-rotate(174deg)
-        brightness(112%)
-        contrast(100%)
-        drop-shadow(0 0 10px rgba(216, 231, 255, 0.42));
+        brightness(96%)
+        contrast(96%)
+        drop-shadow(0 0 8px rgba(31, 58, 95, 0.38));
     }
 
     .site-header.is-scrolled .brand,
@@ -1633,6 +1634,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
+      .site-header .brand::after {
+        display: none;
+      }
       *,
       *::before,
       *::after {
@@ -4323,7 +4328,20 @@
       }
 
       .site-header .brand::after {
-        display: none;
+        display: block;
+      }
+
+      .sub-page .site-header .brand::after {
+        filter:
+          brightness(0)
+          saturate(100%)
+          invert(20%)
+          sepia(28%)
+          saturate(1294%)
+          hue-rotate(174deg)
+          brightness(96%)
+          contrast(96%)
+          drop-shadow(0 0 8px rgba(31, 58, 95, 0.38));
       }
 
       .sub-page .site-header .brand-logo,
