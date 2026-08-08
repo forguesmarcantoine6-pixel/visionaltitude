@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Offre de services de photographie, vidéographie et suivi de chantier par Vision Altitude.">
+  <title>Offre de services | Vision Altitude</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- BOUTON ÉCRAN : masqué automatiquement à l'impression. -->
+  <button class="print-button" type="button" onclick="window.print()">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+    Imprimer / Enregistrer en PDF
+  </button>
+
+  <main class="document">
+    <!-- PAGE 1 ” Remplacer le logo et l'image de couverture dans les attributs src. -->
+    <section class="page cover" aria-labelledby="cover-title">
+      <header class="cover-header">
+        <img class="logo logo-light" src="../assets/vision-altitude-logo-horizontal.png" alt="Vision Altitude">
+      </header>
+      <div class="cover-copy">
+        <h1 id="cover-title">Présentation<br>des services</h1>
+        <p class="cover-subtitle">Photographie, vidéographie<br>et suivi de chantier</p>
+      </div>
+      <!-- IMAGE À REMPLACER : utilisez idéalement une photo horizontale de chantier en haute résolution. -->
+      <figure class="cover-photo">
+        <img src="../assets/offre-services-excavation.png" alt="Vue aérienne d’une excavatrice chargeant un camion sur un chantier">
+      </figure>
+    </section>
+
+    <!-- PAGE 2 ” Synthèse des services, du déroulement et des avantages. -->
+    <section class="page overview merged-overview" aria-labelledby="overview-title">
+      <header class="section-heading merged-heading">
+        <h2 id="overview-title">Une nouvelle perspective<br>sur vos projets</h2>
+        <p class="intro">Vision Altitude accompagne les entreprises de construction, d’excavation, industrielles et immobilières dans la création de contenu photo et vidéo professionnel. Qu’il s’agisse de documenter un chantier, de présenter une réalisation ou d’alimenter les réseaux sociaux, chaque captation est adaptée aux objectifs du projet.</p>
+      </header>
+
+      <div class="services-grid merged-services">
+        <article class="service-card"><h3>Photographie</h3><ul><li>Photos aériennes et au sol</li><li>Retouche professionnelle</li><li>Livraison en haute résolution</li></ul></article>
+        <article class="service-card"><h3>Vidéographie</h3><ul><li>Séquences aériennes et au sol</li><li>Montage professionnel</li><li>Vidéos prêtes à publier</li></ul></article>
+        <article class="service-card"><h3>Suivi de chantier</h3><ul><li>Visites ponctuelles ou mensuelles</li><li>Documentation de l’avancement</li><li>Photos et vidéos comparatives</li></ul></article>
+        <article class="service-card"><h3>Contenu promotionnel</h3><ul><li>Vidéos promotionnelles</li><li>Contenu pour sites web</li><li>Formats pour les réseaux sociaux</li></ul></article>
+      </div>
+      <aside class="approach-note">
+        <h3>Une approche adaptée à chaque projet</h3>
+        <p>Chaque chantier est différent. Avant chaque captation, nous prenons le temps de comprendre les objectifs du client afin de produire un contenu qui met réellement ses réalisations en valeur, qu’il soit destiné à la documentation, au marketing ou aux réseaux sociaux.</p>
+      </aside>
+
+      <section class="merged-process" aria-labelledby="process-title">
+        <h3 id="process-title">Un service simple et adapté à vos besoins</h3>
+        <ol class="timeline">
+          <li><span>01</span><div><h4>Discussion des besoins</h4><p>Objectifs et livrables.</p></div></li>
+          <li><span>02</span><div><h4>Planification</h4><p>Coordination et conditions.</p></div></li>
+          <li><span>03</span><div><h4>Prises de vue</h4><p>Captation aérienne et au sol.</p></div></li>
+          <li><span>04</span><div><h4>Montage et retouche</h4><p>Finition professionnelle.</p></div></li>
+          <li><span>05</span><div><h4>Livraison</h4><p>Transfert et ajustements.</p></div></li>
+        </ol>
+      </section>
+
+      <div class="why merged-why">
+        <div class="why-title"><h3>Pourquoi<br>Vision Altitude</h3></div>
+        <ul class="check-grid">
+          <li>Service personnalisé</li><li>Captation aérienne et au sol</li>
+          <li>Contenu adapté à la construction</li><li>Formats optimisés pour les réseaux sociaux</li>
+          <li>Livraison numérique rapide</li><li>Ajustements selon vos préférences</li>
+          <li>Mandats conformes à la réglementation de Transport Canada</li><li>Déplacements dans le Grand Montréal</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PAGE 3 ” Tarification, déplacements, paiement et engagement. -->
+    <section class="page terms" aria-labelledby="terms-title">
+      <header class="section-heading terms-heading">
+        <h2 id="terms-title">Tarification, modalités<br>et garanties</h2>
+        <!-- TEXTE D'INTRODUCTION À REMPLACER au besoin. -->
+        <p class="terms-intro">Vision Altitude offre des services professionnels de photographie et de vidéographie aérienne adaptés aux besoins des petites et moyennes entreprises. Les tarifs varient selon la durée du mandat, la complexité des prises de vue, les déplacements requis, le temps de traitement et les livrables demandés.</p>
+        <p class="pricing-disclaimer">Les tarifs ci-dessous sont fournis à titre indicatif et peuvent varier selon les besoins du projet.</p>
+      </header>
+
+      <section class="terms-section pricing-summary" aria-labelledby="summary-title">
+        <h3 id="summary-title">Tarification</h3>
+        <table class="simple-table price-table">
+          <thead><tr><th>Service</th><th>À partir de</th></tr></thead>
+          <tbody>
+            <tr><td>Photographie aérienne</td><td>250&nbsp;$</td></tr>
+            <tr><td>Suivi de chantier</td><td>300&nbsp;$</td></tr>
+            <tr><td>Suivi mensuel de chantier</td><td>400&nbsp;$ / mois</td></tr>
+            <tr><td>Vidéographie aérienne avec montage</td><td>600&nbsp;$</td></tr>
+          </tbody>
+        </table>
+        <p class="terms-highlight">Chaque projet est unique. Une soumission personnalisée est préparée selon les besoins du client.</p>
+      </section>
+
+      <section class="terms-section travel" aria-labelledby="travel-title">
+        <h3 id="travel-title">Frais de déplacement</h3>
+        <p>Les déplacements à Terrebonne, Mascouche et Repentigny sont inclus dans le prix des services. Des frais fixes peuvent s’appliquer à l’extérieur de ce territoire. Ils sont toujours indiqués dans la soumission avant le début du mandat.</p>
+        <table class="simple-table travel-table">
+          <thead><tr><th>Zone</th><th>Territoire</th><th>Frais</th></tr></thead>
+          <tbody>
+            <tr><td>Zone 1</td><td>Terrebonne, Mascouche, Repentigny</td><td>Inclus</td></tr>
+            <tr><td>Zone 2</td><td>Laval, Blainville, Boisbriand, Mirabel</td><td>25&nbsp;$</td></tr>
+            <tr><td>Zone 3</td><td>Montréal, Longueuil, Boucherville</td><td>50&nbsp;$</td></tr>
+            <tr><td>Zone 4</td><td>Saint-Jérôme, Joliette, Vaudreuil, Saint-Jean-sur-Richelieu</td><td>75&nbsp;$</td></tr>
+            <tr><td>Hors territoire</td><td>Plus de 75 km</td><td>Sur soumission</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="terms-columns">
+        <section class="terms-section payment" aria-labelledby="payment-title">
+          <h3 id="payment-title">Modalités de paiement</h3>
+          <ul class="compact-list">
+            <li>Une soumission détaillée est remise avant chaque mandat.</li>
+            <li>Aucun frais supplémentaire sans l’approbation préalable du client.</li>
+            <li>Les services sont généralement facturés à la fin du mandat.</li>
+            <li>Un dépôt pouvant aller jusqu’à 50&nbsp;% peut être demandé pour les projets de plus grande envergure.</li>
+            <li>Les modalités de paiement sont indiquées dans la soumission.</li>
+            <li>Les factures sont généralement payables dans un délai de 30 jours.</li>
+            <li>Paiement par virement Interac, virement bancaire, chèque ou autre méthode acceptée.</li>
+          </ul>
+        </section>
+
+        <section class="terms-section commitment" aria-labelledby="commitment-title">
+          <h3 id="commitment-title">Notre engagement</h3>
+          <ul class="commitment-list">
+            <li>Les besoins et les attentes sont définis avant le mandat.</li>
+            <li>Une communication est maintenue pendant le projet.</li>
+            <li>Le client peut communiquer avec nous dans les sept jours suivant la livraison pour demander des corrections mineures ou des ajustements raisonnables.</li>
+            <li>Les corrections respectant la portée initiale sont effectuées sans frais supplémentaires.</li>
+            <li>Les fichiers sont livrés dans des formats compatibles avec les principales plateformes numériques.</li>
+            <li>En cas de problème technique lié aux fichiers livrés, une nouvelle copie est fournie sans frais.</li>
+            <li>Vision Altitude privilégie des relations durables fondées sur la confiance, le professionnalisme et la qualité du service.</li>
+          </ul>
+        </section>
+      </div>
+      <section class="contact-block" aria-labelledby="contact-title">
+        <div><h3 id="contact-title">Au plaisir de collaborer<br>avec vous.</h3></div>
+        <!-- COORDONNÉES À REMPLACER -->
+        <address><strong>Marc-Antoine Forgues</strong><span>Fondateur, Vision Altitude</span><a href="mailto:info@visionaltitude.ca">info@visionaltitude.ca</a><a href="https://www.visionaltitude.ca">www.visionaltitude.ca</a></address>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

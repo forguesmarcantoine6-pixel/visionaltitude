@@ -10,25 +10,25 @@ const carouselImageSets = {
   chantier: [
     {
       src: "../assets/suivi-chantier-01.jpg",
-      alt: "Vue aerienne verticale d'un chantier en excavation a Montreal"
+      alt: "Vue aérienne verticale d'un chantier en excavation à Montréal"
     },
     {
       src: "../assets/suivi-chantier-02.png",
-      alt: "Vue rapprochee d'un chantier avec travailleurs et excavation"
+      alt: "Vue rapprochée d'un chantier avec travailleurs et excavation"
     },
     {
       src: "../assets/suivi-chantier-03-dji0135.jpg",
-      alt: "Vue aerienne d'un chantier commercial capturee par drone"
+      alt: "Vue aérienne d'un chantier commercial captée par drone"
     }
   ],
   inspection: [
     {
       src: "../assets/inspection-facade-01.jpg",
-      alt: "Vue detaillee d'une facade inspectee par drone"
+      alt: "Vue détaillée d'une façade inspectée par drone"
     },
     {
       src: "../assets/inspection-toiture-01.jpg",
-      alt: "Vue aerienne verticale d'une toiture inspectee par drone"
+      alt: "Vue aérienne verticale d'une toiture inspectée par drone"
     }
   ]
 };

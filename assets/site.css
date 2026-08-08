@@ -1,4 +1,4 @@
-﻿:root {
+:root {
       --black: #06080d;
       --ink: #151820;
       --graphite: #232a33;
@@ -136,7 +136,7 @@
       z-index: 2;
       opacity: 1;
       pointer-events: none;
-      background: url("vision-altitude-logo-shine-overlay.webp") center / contain no-repeat;
+      background: url("vision-altitude-logo-shine-overlay-smooth.webp") center / contain no-repeat;
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.44));
     }
 
@@ -4320,6 +4320,10 @@
 
       .site-header .brand {
         width: 132px;
+      }
+
+      .site-header .brand::after {
+        display: none;
       }
 
       .sub-page .site-header .brand-logo,
