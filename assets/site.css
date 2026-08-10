@@ -1612,6 +1612,24 @@
       transition: color 0.2s ease;
     }
 
+    .footer-social-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 0;
+    }
+
+    .footer-social-links a {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    .footer-social-links a:hover,
+    .footer-social-links a:focus-visible {
+      color: var(--sky-light);
+    }
+
 
 
     .footer-legal-column {
