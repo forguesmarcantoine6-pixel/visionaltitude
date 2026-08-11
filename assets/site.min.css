@@ -3655,7 +3655,7 @@
     }
 
     .securi-private-label {
-      color: rgba(255, 255, 255, 0.66);
+      color: rgba(255, 255, 255, 0.84);
       font-size: 0.74rem;
       font-weight: 850;
       letter-spacing: 0.12em;
@@ -3737,7 +3737,7 @@
 
     .securi-hero p {
       max-width: 720px;
-      color: rgba(255, 255, 255, 0.82);
+      color: rgba(255, 255, 255, 0.9);
       font-size: clamp(1.06rem, 1.7vw, 1.25rem);
     }
 
@@ -3830,6 +3830,12 @@
       background: var(--securi-green-soft);
     }
 
+    .securi-carousel-section {
+      background:
+        linear-gradient(rgba(214, 208, 206, 0.72), rgba(214, 208, 206, 0.72)),
+        url("securi-hero-contour-background.png") center / cover no-repeat;
+    }
+
     .securi-section-dark {
       color: #ffffff;
       background:
@@ -3866,7 +3872,7 @@
 
     .securi-section-dark p,
     .securi-section-dark li {
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .securi-heading {
@@ -4139,8 +4145,34 @@
     }
 
     .securi-final {
+      position: relative;
+      overflow: hidden;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.14);
+      background:
+        linear-gradient(135deg, rgba(5, 58, 45, 0.98), rgba(7, 93, 63, 0.96));
+    }
+
+    .securi-final::after {
+      content: "";
+      position: absolute;
+      right: -8%;
+      bottom: -92px;
+      left: -8%;
+      height: 150px;
+      background: #050608;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      z-index: 0;
+    }
+
+    .securi-final > .container {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 70px;
+    }
+
+    .securi-footer {
+      margin-top: 0;
     }
 
     .securi-final h2 {
@@ -4154,12 +4186,25 @@
     .securi-final p {
       max-width: 760px;
       margin: 0 auto;
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.84);
     }
 
     .securi-final .securi-button-row {
       justify-content: center;
       margin-top: 34px;
+    }
+
+    .securi-final .securi-button-secondary {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .securi-final .securi-button-secondary:hover,
+    .securi-final .securi-button-secondary:focus-visible {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.46);
+      background: rgba(255, 255, 255, 0.14);
     }
 
     @media (max-width: 980px) {
