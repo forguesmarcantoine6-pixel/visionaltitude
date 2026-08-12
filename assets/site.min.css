@@ -260,15 +260,11 @@
       position: absolute;
       right: max(20px, calc((100vw - 1180px) / 2));
       margin-left: 0;
-      padding: 7px 11px;
+      padding: 0;
       color: var(--paper);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 999px;
-      background: rgba(31, 58, 95, 0.34);
       font-size: 0.68em;
       line-height: 1;
       white-space: nowrap;
-      backdrop-filter: blur(10px);
     }
 
     .nav-links .nav-phone::after {
@@ -277,9 +273,7 @@
 
     .nav-links .nav-phone:hover,
     .nav-links .nav-phone:focus-visible {
-      color: var(--paper);
-      border-color: rgba(255, 255, 255, 0.42);
-      background: var(--sky);
+      color: var(--sky-light);
     }
 
     .home-page .site-header {
