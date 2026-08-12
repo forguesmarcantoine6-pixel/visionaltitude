@@ -451,3 +451,39 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
+
+document.querySelectorAll("[data-footer-paged]").forEach((footerColumn) => {
+  const firstPage = footerColumn.querySelector('[data-footer-page="0"]');
+  const secondPage = footerColumn.querySelector('[data-footer-page="1"]');
+  const nextButton = footerColumn.querySelector("[data-footer-next]");
+  const prevButton = footerColumn.querySelector("[data-footer-prev]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!firstPage || !secondPage || !nextButton || !prevButton) {
+    return;
+  }
+
+  const showPage = (pageIndex, direction) => {
+    const showSecondPage = pageIndex === 1;
+    const activePage = showSecondPage ? secondPage : firstPage;
+    const hiddenPage = showSecondPage ? firstPage : secondPage;
+
+    hiddenPage.hidden = true;
+    hiddenPage.classList.remove("is-active", "is-moving-down", "is-moving-up");
+
+    activePage.hidden = false;
+    activePage.classList.remove("is-moving-down", "is-moving-up");
+
+    if (!prefersReducedMotion) {
+      activePage.classList.add(direction === "down" ? "is-moving-down" : "is-moving-up");
+    }
+
+    firstPage.hidden = showSecondPage;
+    secondPage.hidden = !showSecondPage;
+    firstPage.classList.toggle("is-active", !showSecondPage);
+    secondPage.classList.toggle("is-active", showSecondPage);
+  };
+
+  nextButton.addEventListener("click", () => showPage(1, "down"));
+  prevButton.addEventListener("click", () => showPage(0, "up"));
+});

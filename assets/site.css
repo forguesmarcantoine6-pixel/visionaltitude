@@ -1633,6 +1633,94 @@
       text-transform: uppercase;
     }
 
+    .footer-page {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-page[hidden] {
+      display: none !important;
+    }
+
+    .footer-page.is-moving-down {
+      animation: footerPageDown 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .footer-page.is-moving-up {
+      animation: footerPageUp 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes footerPageDown {
+      from {
+        opacity: 0;
+        transform: translateY(-22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes footerPageUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer-page-button {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-top: 1px;
+      padding: 0;
+      color: rgba(255, 255, 255, 0.78);
+      background: transparent;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-page-button::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translate(-1px, -2px);
+    }
+
+    .footer-page-button-prev::before {
+      transform: rotate(225deg) translate(-1px, -2px);
+    }
+
+    .footer-page-button:hover,
+    .footer-page-button:focus-visible {
+      color: var(--paper);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .footer-page-button:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.75);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .footer-page.is-moving-down,
+      .footer-page.is-moving-up {
+        animation: none;
+      }
+    }
+
     .footer-column a,
     .footer-contact a {
       transition: color 0.2s ease;
