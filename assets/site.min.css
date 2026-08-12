@@ -256,6 +256,32 @@
       color: var(--sky-light);
     }
 
+    .nav-links .nav-phone {
+      position: absolute;
+      right: max(20px, calc((100vw - 1180px) / 2));
+      margin-left: 0;
+      padding: 7px 11px;
+      color: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(31, 58, 95, 0.34);
+      font-size: 0.68em;
+      line-height: 1;
+      white-space: nowrap;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-links .nav-phone::after {
+      display: none;
+    }
+
+    .nav-links .nav-phone:hover,
+    .nav-links .nav-phone:focus-visible {
+      color: var(--paper);
+      border-color: rgba(255, 255, 255, 0.42);
+      background: var(--sky);
+    }
+
     .home-page .site-header {
       min-height: 116px;
       display: grid;
@@ -2786,6 +2812,58 @@
       margin-top: auto;
     }
 
+    .pricing-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pricing-link-button,
+    .pricing-cta-button {
+      min-width: 0;
+      flex: 1 1 118px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      line-height: 1.15;
+      font-weight: 850;
+      text-align: center;
+      white-space: nowrap;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .pricing-link-button {
+      color: var(--sky);
+      border: 1px solid rgba(31, 58, 95, 0.22);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .pricing-cta-button {
+      color: var(--paper);
+      border: 1px solid var(--sky);
+      background: var(--sky);
+    }
+
+    .pricing-link-button:hover,
+    .pricing-link-button:focus-visible,
+    .pricing-cta-button:hover,
+    .pricing-cta-button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .pricing-link-button:hover,
+    .pricing-link-button:focus-visible {
+      color: var(--paper);
+      background: var(--sky);
+    }
+
+    .pricing-cta-button:hover,
+    .pricing-cta-button:focus-visible {
+      background: #162d4f;
+      border-color: #162d4f;
+    }
+
     .travel-card {
       padding: 32px;
       display: grid;
@@ -4593,6 +4671,21 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         font-size: 1.04rem;
         font-weight: 850;
+      }
+
+      .nav-links .nav-phone {
+        position: relative;
+        right: auto;
+        margin-left: 0;
+        padding: 14px;
+        color: var(--sky-light);
+        border: 0;
+        border-bottom: 0;
+        border-radius: 0;
+        background: transparent;
+        font-size: 0.9rem;
+        text-align: left;
+        backdrop-filter: none;
       }
 
       .nav-links a:last-child {
