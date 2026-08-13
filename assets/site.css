@@ -1883,6 +1883,14 @@
       animation: textClarify 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     }
 
+    .site-footer .text-clarify,
+    .site-footer .text-clarify.is-clarifying {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      animation: none;
+    }
+
     @keyframes textClarify {
       0% {
         opacity: 0;

@@ -43,10 +43,7 @@ const motionTextSelector = [
   "main .project-content span",
   "main .project-details span",
   "main .hero-meta strong",
-  "main .hero-meta span",
-  "footer a",
-  "footer span",
-  "footer .copyright"
+  "main .hero-meta span"
 ].join(",");
 const motionTextElements = [...document.querySelectorAll(motionTextSelector)]
   .filter((element) => !element.closest(".hero-brand-stage") && !element.closest(".faq-section") && !element.closest(".case-faq") && !element.matches("[data-form-status]"));
