@@ -541,6 +541,10 @@
       font-size: clamp(1.9rem, 3.6vw, 3.9rem);
     }
 
+    .home-page .hero-title-brand {
+      color: var(--sky);
+    }
+
     .home-page .hero-copy-minimal > p:not(.eyebrow) {
       max-width: 620px;
       margin-bottom: 24px;
