@@ -484,3 +484,79 @@ document.querySelectorAll("[data-footer-paged]").forEach((footerColumn) => {
   nextButton.addEventListener("click", () => showPage(1, "down"));
   prevButton.addEventListener("click", () => showPage(0, "up"));
 });
+
+document.querySelectorAll("[data-partner-widget]").forEach((widget) => {
+  const toggle = widget.querySelector("[data-partner-toggle]");
+  const panel = widget.querySelector("[data-partner-panel]");
+
+  if (!toggle || !panel) {
+    return;
+  }
+
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  let closeTimer;
+  let hideTimer;
+
+  const queueClose = () => {
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(() => closePanel({ restoreFocus: false }), 180);
+  };
+
+  const openPanel = () => {
+    window.clearTimeout(closeTimer);
+    window.clearTimeout(hideTimer);
+    panel.hidden = false;
+    window.requestAnimationFrame(() => {
+      panel.classList.add("is-open");
+      widget.classList.add("is-open");
+    });
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  const closePanel = ({ restoreFocus = true } = {}) => {
+    panel.classList.remove("is-open");
+    widget.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    window.clearTimeout(hideTimer);
+    hideTimer = window.setTimeout(() => {
+      if (!panel.classList.contains("is-open")) {
+        panel.hidden = true;
+      }
+    }, 280);
+
+    if (restoreFocus) {
+      toggle.focus({ preventScroll: true });
+    }
+  };
+
+  if (canHover) {
+    widget.addEventListener("mouseenter", openPanel);
+    widget.addEventListener("mouseleave", queueClose);
+    widget.addEventListener("focusin", openPanel);
+    widget.addEventListener("focusout", (event) => {
+      if (!widget.contains(event.relatedTarget)) {
+        closePanel({ restoreFocus: false });
+      }
+    });
+  } else {
+    toggle.addEventListener("click", () => {
+      if (panel.hidden) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!panel.hidden && !widget.contains(event.target)) {
+      closePanel({ restoreFocus: false });
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !panel.hidden) {
+      closePanel();
+    }
+  });
+});
