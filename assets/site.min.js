@@ -450,24 +450,32 @@ if ("IntersectionObserver" in window) {
 }
 
 document.querySelectorAll("[data-footer-paged]").forEach((footerColumn) => {
-  const firstPage = footerColumn.querySelector('[data-footer-page="0"]');
-  const secondPage = footerColumn.querySelector('[data-footer-page="1"]');
-  const nextButton = footerColumn.querySelector("[data-footer-next]");
-  const prevButton = footerColumn.querySelector("[data-footer-prev]");
+  const pages = Array.from(footerColumn.querySelectorAll("[data-footer-page]")).sort(
+    (a, b) => Number(a.dataset.footerPage) - Number(b.dataset.footerPage)
+  );
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let currentPageIndex = pages.findIndex((page) => page.classList.contains("is-active"));
 
-  if (!firstPage || !secondPage || !nextButton || !prevButton) {
+  if (pages.length < 2) {
     return;
   }
 
+  if (currentPageIndex < 0) {
+    currentPageIndex = 0;
+  }
+
   const showPage = (pageIndex, direction) => {
-    const showSecondPage = pageIndex === 1;
-    const activePage = showSecondPage ? secondPage : firstPage;
-    const hiddenPage = showSecondPage ? firstPage : secondPage;
+    if (pageIndex < 0 || pageIndex >= pages.length || pageIndex === currentPageIndex) {
+      return;
+    }
 
-    hiddenPage.hidden = true;
-    hiddenPage.classList.remove("is-active", "is-moving-down", "is-moving-up");
-
+    const activePage = pages[pageIndex];
+    pages.forEach((page, index) => {
+      if (index !== pageIndex) {
+        page.hidden = true;
+        page.classList.remove("is-active", "is-moving-down", "is-moving-up");
+      }
+    });
     activePage.hidden = false;
     activePage.classList.remove("is-moving-down", "is-moving-up");
 
@@ -475,14 +483,17 @@ document.querySelectorAll("[data-footer-paged]").forEach((footerColumn) => {
       activePage.classList.add(direction === "down" ? "is-moving-down" : "is-moving-up");
     }
 
-    firstPage.hidden = showSecondPage;
-    secondPage.hidden = !showSecondPage;
-    firstPage.classList.toggle("is-active", !showSecondPage);
-    secondPage.classList.toggle("is-active", showSecondPage);
+    activePage.classList.add("is-active");
+    currentPageIndex = pageIndex;
   };
 
-  nextButton.addEventListener("click", () => showPage(1, "down"));
-  prevButton.addEventListener("click", () => showPage(0, "up"));
+  footerColumn.querySelectorAll("[data-footer-next]").forEach((button) => {
+    button.addEventListener("click", () => showPage(currentPageIndex + 1, "down"));
+  });
+
+  footerColumn.querySelectorAll("[data-footer-prev]").forEach((button) => {
+    button.addEventListener("click", () => showPage(currentPageIndex - 1, "up"));
+  });
 });
 
 document.querySelectorAll("[data-partner-widget]").forEach((widget) => {

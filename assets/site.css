@@ -1873,6 +1873,12 @@
       transform: rotate(225deg) translate(-1px, -2px);
     }
 
+    .footer-page-button-prev {
+      order: -1;
+      margin-top: 0;
+      margin-bottom: 1px;
+    }
+
     .footer-page-button:hover,
     .footer-page-button:focus-visible {
       color: var(--paper);
