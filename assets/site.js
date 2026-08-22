@@ -58,6 +58,83 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const initMediaLoadingStates = () => {
+  const mediaElements = [...document.querySelectorAll("img, video, iframe")];
+  const excludedSelectors = [
+    ".site-header",
+    ".site-footer",
+    ".partner-widget",
+    ".hero-brand-stage",
+    ".prototype-topbar",
+    ".securi-topbar"
+  ].join(",");
+
+  mediaElements.forEach((media) => {
+    if (media.closest(excludedSelectors) || media.closest(".media-loader-wrap")) {
+      return;
+    }
+
+    const existingFrame = media.closest("[data-video-sequence], .video-embed, .case-video-frame, .project-video-frame, .securi-carousel-slide");
+    const target = media.parentElement?.tagName === "PICTURE" ? media.parentElement : media;
+    const parent = target.parentNode;
+    let wrapper = existingFrame;
+
+    if (!wrapper && !parent) {
+      return;
+    }
+
+    if (wrapper) {
+      wrapper.classList.add("media-loader-wrap", "media-loading");
+    } else {
+      wrapper = document.createElement("span");
+      wrapper.className = "media-loader-wrap media-loading";
+      parent.insertBefore(wrapper, target);
+      wrapper.appendChild(target);
+    }
+
+    wrapper.setAttribute("aria-busy", "true");
+
+    const markLoaded = () => {
+      wrapper.classList.remove("media-loading");
+      wrapper.classList.add("media-loaded");
+      wrapper.setAttribute("aria-busy", "false");
+    };
+
+    if (media.tagName === "IMG") {
+      if (media.complete && media.naturalWidth > 0) {
+        markLoaded();
+        return;
+      }
+
+      media.addEventListener("load", markLoaded, { once: true });
+      media.addEventListener("error", markLoaded, { once: true });
+      return;
+    }
+
+    if (media.tagName === "VIDEO") {
+      if (media.readyState >= 2) {
+        markLoaded();
+        return;
+      }
+
+      media.addEventListener("loadeddata", markLoaded, { once: true });
+      media.addEventListener("canplay", markLoaded, { once: true });
+      media.addEventListener("error", markLoaded, { once: true });
+      return;
+    }
+
+    media.addEventListener("load", markLoaded, { once: true });
+    media.addEventListener("error", markLoaded, { once: true });
+    window.setTimeout(markLoaded, 12000);
+  });
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMediaLoadingStates, { once: true });
+} else {
+  initMediaLoadingStates();
+}
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const image = carousel.querySelector("[data-carousel-image]");
   const previousButton = carousel.querySelector("[data-carousel-prev]");
@@ -74,6 +151,18 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     carousel.classList.add("is-changing");
 
     window.setTimeout(() => {
+      const loader = image.closest(".media-loader-wrap");
+      if (loader) {
+        loader.classList.add("media-loading");
+        loader.classList.remove("media-loaded");
+        loader.setAttribute("aria-busy", "true");
+        image.addEventListener("load", () => {
+          loader.classList.remove("media-loading");
+          loader.classList.add("media-loaded");
+          loader.setAttribute("aria-busy", "false");
+        }, { once: true });
+      }
+
       image.removeAttribute("srcset");
       image.removeAttribute("sizes");
       image.src = carouselImages[currentIndex].src;
