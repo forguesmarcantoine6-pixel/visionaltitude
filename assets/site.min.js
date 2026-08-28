@@ -65,6 +65,7 @@ const initMediaLoadingStates = () => {
     ".site-footer",
     ".partner-widget",
     ".hero-brand-stage",
+    ".securi-hero-title-logo",
     ".prototype-topbar",
     ".securi-topbar"
   ].join(",");

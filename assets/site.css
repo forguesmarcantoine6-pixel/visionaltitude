@@ -45,7 +45,7 @@
       display: block;
       overflow: hidden;
       isolation: isolate;
-      background: rgba(244, 247, 251, 0.92);
+      background: var(--black);
       border-radius: inherit;
     }
 
@@ -67,7 +67,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(31, 58, 95, 0.12));
+      background: var(--black);
       pointer-events: none;
     }
 
@@ -77,12 +77,12 @@
       top: 50%;
       left: 50%;
       z-index: 3;
-      color: var(--sky);
+      color: #ffffff;
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 900;
       line-height: 1;
       letter-spacing: 0.16em;
-      text-shadow: 0 8px 24px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.42);
       transform: translate(-50%, -50%);
       animation: mediaLoadingDots 1.15s ease-in-out infinite;
       pointer-events: none;
