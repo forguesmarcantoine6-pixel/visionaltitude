@@ -3279,6 +3279,33 @@
       background: var(--sky);
     }
 
+    .pricing-card .pricing-nested-item {
+      flex-wrap: wrap;
+    }
+
+    .pricing-card .pricing-nested-item > strong {
+      flex: 1 1 calc(100% - 18px);
+      color: var(--muted);
+      text-shadow: none;
+    }
+
+    .pricing-card .pricing-nested-list {
+      flex: 1 1 100%;
+      margin: 6px 0 0 18px;
+      gap: 8px;
+    }
+
+    .pricing-card .pricing-nested-list li {
+      gap: 9px;
+    }
+
+    .pricing-card .pricing-nested-list li::before {
+      width: 6px;
+      height: 6px;
+      margin-top: 10px;
+      background: rgba(31, 58, 95, 0.72);
+    }
+
     .pricing-note {
       margin: -2px 0 0;
       color: var(--muted);
