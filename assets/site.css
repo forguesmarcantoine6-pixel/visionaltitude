@@ -820,6 +820,10 @@
       max-height: 128px;
     }
 
+    .partner-card--abd3 .media-loader-wrap.media-loaded {
+      background: transparent;
+    }
+
     .partner-card--abd3 .partner-card-visual {
       transform: translateY(-6px);
     }
@@ -1311,7 +1315,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -3189,7 +3193,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
