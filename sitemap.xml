@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://visionaltitude.ca/inspection-visuelle-aerienne/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -104,13 +104,13 @@
   </url>
   <url>
     <loc>https://visionaltitude.ca/portfolio/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://visionaltitude.ca/etudes-de-cas/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -146,7 +146,13 @@
   </url>
   <url>
     <loc>https://visionaltitude.ca/etudes-de-cas/video-promotionnelle-ecole-bles-dor/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visionaltitude.ca/etudes-de-cas/projet-st-joseph/</loc>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
