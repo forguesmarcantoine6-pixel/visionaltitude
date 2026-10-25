@@ -7748,3 +7748,26 @@
         padding: 22px;
       }
     }
+
+    body.sub-page:not(.home-page) main#contenu .page-hero h1 {
+      font-size: clamp(2.35rem, 3.2vw, 3.25rem);
+      line-height: 1.08;
+    }
+
+    @media (max-width: 1100px) {
+      body.sub-page:not(.home-page) main#contenu .page-hero h1 {
+        font-size: 2.55rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      body.sub-page:not(.home-page) main#contenu .page-hero h1 {
+        font-size: clamp(2.25rem, 6.5vw, 2.9rem);
+      }
+    }
+
+    @media (max-width: 620px) {
+      body.sub-page:not(.home-page) main#contenu .page-hero h1 {
+        font-size: clamp(2rem, 9.2vw, 2.45rem);
+      }
+    }
