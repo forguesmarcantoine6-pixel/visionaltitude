@@ -6973,3 +6973,778 @@
         border-top-color: rgba(255, 255, 255, 0.18);
       }
     }
+
+    /* Shared visual direction for Vision Altitude subpages */
+    .sub-page:not(.home-page) {
+      --subpage-gutter: max(24px, calc((100vw - 1240px) / 2));
+      --subpage-bg: #171c22;
+      --subpage-surface: #1c2229;
+      --subpage-soft: #252c34;
+      --subpage-line: rgba(255, 255, 255, 0.16);
+      color: #f4f6f8;
+      background: var(--subpage-bg);
+    }
+
+    .sub-page:not(.home-page) main {
+      overflow: clip;
+      background: var(--subpage-bg);
+    }
+
+    .sub-page:not(.home-page) .site-header {
+      min-height: 82px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      background: linear-gradient(180deg, rgba(11, 13, 17, 0.48), rgba(11, 13, 17, 0.08));
+      backdrop-filter: none;
+    }
+
+    .sub-page:not(.home-page) .site-header.is-scrolled {
+      min-height: 82px;
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+      background: rgba(11, 13, 17, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .sub-page:not(.home-page) .nav,
+    .sub-page:not(.home-page) .site-header.is-scrolled .nav {
+      width: min(1240px, calc(100% - 48px));
+      min-height: 82px;
+      justify-content: flex-end;
+      padding-right: 136px;
+    }
+
+    .sub-page:not(.home-page) .site-header .brand {
+      left: var(--subpage-gutter);
+      width: 178px;
+    }
+
+    .sub-page:not(.home-page) .brand-logo {
+      width: 178px;
+      filter: none !important;
+    }
+
+    .sub-page:not(.home-page) .site-header.is-scrolled .brand-logo {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    .sub-page:not(.home-page) .site-header .brand::after {
+      display: block;
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
+      mix-blend-mode: screen;
+      animation: headerLogoShine 10s ease-in-out 2s infinite;
+    }
+
+    .sub-page:not(.home-page) .site-header.is-scrolled .brand::after {
+      display: block;
+      filter:
+        brightness(0)
+        saturate(100%)
+        invert(20%)
+        sepia(28%)
+        saturate(1294%)
+        hue-rotate(174deg)
+        brightness(112%)
+        contrast(112%)
+        drop-shadow(0 0 8px rgba(31, 58, 95, 0.62));
+      mix-blend-mode: normal;
+      animation: headerLogoShine 10s ease-in-out 2s infinite;
+    }
+
+    .sub-page:not(.home-page) .nav-links {
+      gap: clamp(20px, 2.4vw, 34px);
+      color: #f3f5f7;
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .sub-page:not(.home-page) .nav-links a,
+    .sub-page:not(.home-page) .site-header.is-scrolled .nav-links a {
+      color: #f3f5f7;
+    }
+
+    .sub-page:not(.home-page) .nav-links a::after {
+      bottom: 0;
+      height: 1px;
+      background: #1f3a5f;
+    }
+
+    .sub-page:not(.home-page) .nav-links a:hover,
+    .sub-page:not(.home-page) .nav-links a:focus-visible,
+    .sub-page:not(.home-page) .nav-links a.is-active {
+      color: #ffffff;
+    }
+
+    .sub-page:not(.home-page) .nav-links .nav-phone {
+      right: var(--subpage-gutter);
+      color: #f3f5f7;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .sub-page:not(.home-page) .page-hero,
+    .sub-page:not(.home-page) .page-hero .container {
+      min-height: clamp(620px, 76svh, 760px);
+    }
+
+    .sub-page:not(.home-page) .page-hero {
+      color: #f4f6f8;
+      background: #171c22;
+    }
+
+    .sub-page:not(.home-page) .page-hero::before {
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.54), rgba(11, 13, 17, 0.26)),
+        linear-gradient(180deg, rgba(11, 13, 17, 0.16), rgba(11, 13, 17, 0.48)),
+        image-set(url("vision-altitude-background-dji0094.avif") type("image/avif"), url("vision-altitude-background-dji0094.webp") type("image/webp"), url("vision-altitude-background-dji0094.jpg") type("image/jpeg")) center / cover no-repeat;
+      transform: none;
+    }
+
+    .sub-page:not(.home-page) .page-hero .container {
+      align-content: center;
+      padding: 146px 0 76px;
+    }
+
+    .sub-page:not(.home-page) .page-hero h1,
+    .sub-page:not(.home-page) .page-hero .eyebrow,
+    .sub-page:not(.home-page) .page-hero p:not(.eyebrow),
+    .sub-page:not(.home-page) .page-hero .hero-actions,
+    .sub-page:not(.home-page) .page-hero .category-strip {
+      margin-left: 0;
+    }
+
+    .sub-page:not(.home-page) .page-hero h1 {
+      max-width: 780px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .sub-page:not(.home-page) .page-hero p:not(.eyebrow) {
+      max-width: 720px;
+      margin-bottom: 26px;
+      color: #d0d6dc;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+    }
+
+    .sub-page:not(.home-page) main > section:not(.page-hero) {
+      color: #f4f6f8;
+      background: var(--subpage-surface);
+    }
+
+    .sub-page:not(.home-page) main > .section-soft,
+    .sub-page:not(.home-page) main > .section-light,
+    .sub-page:not(.home-page) main > .faq-section.section-soft {
+      background: var(--subpage-soft) !important;
+    }
+
+    .sub-page:not(.home-page) .photo-bg-one,
+    .sub-page:not(.home-page) .section-soft.photo-bg-one {
+      color: #f4f6f8;
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.58), rgba(11, 13, 17, 0.46)),
+        image-set(url("section-bg-01.avif") type("image/avif"), url("section-bg-01.webp") type("image/webp"), url("section-bg-01.jpg") type("image/jpeg")) center / cover no-repeat !important;
+    }
+
+    .sub-page:not(.home-page) .photo-bg-two,
+    .sub-page:not(.home-page) .section-soft.photo-bg-two {
+      color: #f4f6f8;
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.56), rgba(11, 13, 17, 0.44)),
+        image-set(url("section-bg-02.avif") type("image/avif"), url("section-bg-02.webp") type("image/webp"), url("section-bg-02.jpg") type("image/jpeg")) center / cover no-repeat !important;
+    }
+
+    .sub-page:not(.home-page) .photo-bg-one::before,
+    .sub-page:not(.home-page) .photo-bg-two::before {
+      display: none;
+    }
+
+    .sub-page:not(.home-page) main > section:not(.page-hero) {
+      padding: clamp(76px, 8vw, 104px) 0;
+    }
+
+    .sub-page:not(.home-page) main h1,
+    .sub-page:not(.home-page) main h2,
+    .sub-page:not(.home-page) main h3,
+    .sub-page:not(.home-page) .content-block h2,
+    .sub-page:not(.home-page) .section-heading h2,
+    .sub-page:not(.home-page) .resource-group h2,
+    .sub-page:not(.home-page) .resource-callout-box h2,
+    .sub-page:not(.home-page) .case-plain h2,
+    .sub-page:not(.home-page) .case-plain h3 {
+      color: #ffffff;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .content-block h2,
+    .sub-page:not(.home-page) .section-heading h2 {
+      font-size: clamp(1.9rem, 3.2vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .sub-page:not(.home-page) main p,
+    .sub-page:not(.home-page) main li,
+    .sub-page:not(.home-page) .content-block p,
+    .sub-page:not(.home-page) .section-heading p,
+    .sub-page:not(.home-page) .case-plain,
+    .sub-page:not(.home-page) .case-plain p,
+    .sub-page:not(.home-page) .case-plain li,
+    .sub-page:not(.home-page) .resource-list p,
+    .sub-page:not(.home-page) .resource-callout-box p {
+      color: #c2cad3;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) main .eyebrow {
+      color: #9fa8b3;
+      font-size: 0.82rem;
+      font-weight: 650;
+      letter-spacing: 0;
+      text-transform: none;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .text-link,
+    .sub-page:not(.home-page) .resource-list a,
+    .sub-page:not(.home-page) .resource-related a,
+    .sub-page:not(.home-page) .breadcrumb a {
+      color: #d9e5f3;
+      text-decoration-color: #6f7c8b;
+    }
+
+    .sub-page:not(.home-page) .button {
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 2px;
+      box-shadow: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .sub-page:not(.home-page) .button:hover,
+    .sub-page:not(.home-page) .button:focus-visible {
+      box-shadow: none;
+      transform: none;
+    }
+
+    .sub-page:not(.home-page) .button-primary {
+      color: #ffffff;
+      border-color: #1f3a5f;
+      background: #1f3a5f;
+    }
+
+    .sub-page:not(.home-page) .button-secondary,
+    .sub-page:not(.home-page) .case-sidebar .button-secondary {
+      color: #ffffff;
+      border: 1px solid #707a86;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .sub-page:not(.home-page) :is(
+      .service-card,
+      .value-card,
+      .pricing-card,
+      .faq-item,
+      .travel-card,
+      .project-details,
+      .case-card,
+      .process-card,
+      .specialty-card,
+      .note-card,
+      .partner-card,
+      .contact-form
+    ) {
+      color: #f4f6f8;
+      border: 1px solid var(--subpage-line);
+      border-radius: 4px;
+      background: rgba(18, 23, 29, 0.88);
+      box-shadow: none;
+    }
+
+    .sub-page:not(.home-page) :is(
+      .service-card,
+      .value-card,
+      .pricing-card,
+      .faq-item,
+      .travel-card,
+      .project-details,
+      .case-card,
+      .process-card,
+      .specialty-card,
+      .note-card,
+      .partner-card,
+      .contact-form
+    ):hover {
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .sub-page:not(.home-page) :is(
+      .service-card,
+      .value-card,
+      .pricing-card,
+      .faq-item,
+      .travel-card,
+      .project-details,
+      .case-card,
+      .process-card,
+      .specialty-card,
+      .note-card,
+      .partner-card
+    ) :is(h2, h3, strong),
+    .sub-page:not(.home-page) .price strong {
+      color: #ffffff !important;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) :is(
+      .service-card,
+      .value-card,
+      .pricing-card,
+      .faq-item,
+      .travel-card,
+      .project-details,
+      .case-card,
+      .process-card,
+      .specialty-card,
+      .note-card,
+      .partner-card
+    ) :is(p, li),
+    .sub-page:not(.home-page) .price {
+      color: #bdc5ce !important;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .check-list li,
+    .sub-page:not(.home-page) .region-list a,
+    .sub-page:not(.home-page) .service-route {
+      padding: 18px 0;
+      color: #f4f6f8;
+      border: 0;
+      border-top: 1px solid var(--subpage-line);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .service-route :is(h2, h3, span) {
+      color: #ffffff !important;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .service-route p {
+      color: #bdc5ce !important;
+      text-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .case-gallery a,
+    .sub-page:not(.home-page) .case-gallery .case-placeholder,
+    .sub-page:not(.home-page) .case-video-frame,
+    .sub-page:not(.home-page) .project-video-frame {
+      border-color: var(--subpage-line);
+      border-radius: 2px;
+      box-shadow: none;
+    }
+
+    .sub-page:not(.home-page) .case-nav a {
+      color: #ffffff;
+      border-color: var(--subpage-line);
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sub-page:not(.home-page) .case-nav span,
+    .sub-page:not(.home-page) .project-details span,
+    .sub-page:not(.home-page) .case-category {
+      color: #9fb4cc;
+    }
+
+    .sub-page:not(.home-page) .project-meta li,
+    .sub-page:not(.home-page) .category-strip span {
+      color: #d5dce4;
+      border-color: var(--subpage-line);
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sub-page:not(.home-page) .faq-section,
+    .sub-page:not(.home-page) .resource-article {
+      color: #f4f6f8;
+      background: var(--subpage-surface);
+    }
+
+    .sub-page:not(.home-page) .faq-accordion,
+    .sub-page:not(.home-page) .faq-accordion-item,
+    .sub-page:not(.home-page) .resource-group,
+    .sub-page:not(.home-page) .resource-callout-box {
+      border-color: var(--subpage-line);
+    }
+
+    .sub-page:not(.home-page) .faq-question {
+      color: #ffffff;
+    }
+
+    .sub-page:not(.home-page) .faq-question::after,
+    .sub-page:not(.home-page) .faq-question[aria-expanded="true"]::after {
+      color: #aeb8c3;
+    }
+
+    .sub-page:not(.home-page) .faq-answer,
+    .sub-page:not(.home-page) .faq-answer p {
+      color: #bdc5ce;
+    }
+
+    .sub-page:not(.home-page) .resource-note,
+    .sub-page:not(.home-page) .comparison-table-wrap {
+      color: #e4e9ee;
+      border-color: var(--subpage-line);
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-page:not(.home-page) .comparison-table {
+      color: #d5dce4;
+    }
+
+    .sub-page:not(.home-page) .comparison-table th {
+      color: #ffffff;
+      background: #252c34;
+    }
+
+    .sub-page:not(.home-page) .comparison-table th,
+    .sub-page:not(.home-page) .comparison-table td {
+      border-bottom-color: var(--subpage-line);
+    }
+
+    .sub-page:not(.home-page) .contact-form :is(input, textarea, select) {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .sub-page:not(.home-page) .contact-form :is(input, textarea)::placeholder {
+      color: #8f99a4;
+    }
+
+    .sub-page:not(.home-page) .legal-content,
+    .sub-page:not(.home-page) .legal-section {
+      color: #d0d6dc;
+      background: transparent;
+    }
+
+    .sub-page:not(.home-page) .legal-section + .legal-section {
+      border-top-color: var(--subpage-line);
+    }
+
+    .sub-page:not(.home-page) .cta-band {
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.62), rgba(11, 13, 17, 0.46)),
+        image-set(url("vision-altitude-background-dji0094.avif") type("image/avif"), url("vision-altitude-background-dji0094.webp") type("image/webp"), url("vision-altitude-background-dji0094.jpg") type("image/jpeg")) center / cover no-repeat;
+    }
+
+    .sub-page:not(.home-page) .cta-inner h2 {
+      font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+    }
+
+    .sub-page:not(.home-page) .site-footer {
+      color: rgba(23, 26, 31, 0.72);
+      background: #e6e9ec;
+    }
+
+    .sub-page:not(.home-page) .footer-contact h2,
+    .sub-page:not(.home-page) .footer-column h2 {
+      color: #1f3a5f;
+    }
+
+    .sub-page:not(.home-page) .footer-brand,
+    .sub-page:not(.home-page) .footer-column a,
+    .sub-page:not(.home-page) .footer-contact a,
+    .sub-page:not(.home-page) .footer-contact span {
+      color: #303741;
+    }
+
+    .sub-page:not(.home-page) .footer-brand .brand-logo {
+      filter: none;
+    }
+
+    .sub-page:not(.home-page) .footer-legal-column {
+      color: rgba(23, 26, 31, 0.68);
+    }
+
+    .sub-page:not(.home-page) .footer-copyright {
+      color: rgba(23, 26, 31, 0.58);
+    }
+
+    .sub-page:not(.home-page) .footer-copyright-bottom,
+    .sub-page:not(.home-page) .footer-bottom {
+      border-top-color: rgba(23, 26, 31, 0.14);
+    }
+
+    .sub-page:not(.home-page) .footer-page-button {
+      color: #1f3a5f;
+    }
+
+    .sub-page:not(.home-page) .footer-page-button:hover,
+    .sub-page:not(.home-page) .footer-page-button:focus-visible {
+      color: #1f3a5f;
+      background: rgba(31, 58, 95, 0.09);
+    }
+
+    .sub-page:not(.home-page) .footer-column a:hover,
+    .sub-page:not(.home-page) .footer-column a:focus-visible,
+    .sub-page:not(.home-page) .footer-contact a:hover,
+    .sub-page:not(.home-page) .footer-contact a:focus-visible,
+    .sub-page:not(.home-page) .footer-social-links a:hover,
+    .sub-page:not(.home-page) .footer-social-links a:focus-visible {
+      color: #1f3a5f;
+    }
+
+    @media (max-width: 860px) {
+      .sub-page:not(.home-page) {
+        --subpage-gutter: 24px;
+      }
+
+      .sub-page:not(.home-page) .site-header,
+      .sub-page:not(.home-page) .site-header.is-scrolled,
+      .sub-page:not(.home-page) .nav,
+      .sub-page:not(.home-page) .site-header.is-scrolled .nav {
+        min-height: 70px;
+      }
+
+      .sub-page:not(.home-page) .nav,
+      .sub-page:not(.home-page) .site-header.is-scrolled .nav {
+        width: calc(100% - 32px);
+        justify-content: flex-end;
+        padding-right: 0;
+      }
+
+      .sub-page:not(.home-page) .site-header .brand {
+        position: static;
+        width: 158px;
+        margin-right: auto;
+      }
+
+      .sub-page:not(.home-page) .brand-logo {
+        width: 158px;
+      }
+
+      .sub-page:not(.home-page) .menu-button,
+      .sub-page:not(.home-page) .site-header.is-scrolled .menu-button {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.34);
+        background: rgba(11, 13, 17, 0.22);
+      }
+
+      .sub-page:not(.home-page) .page-hero,
+      .sub-page:not(.home-page) .page-hero .container {
+        min-height: 620px;
+      }
+
+      .sub-page:not(.home-page) .page-hero .container {
+        padding: 128px 0 68px;
+      }
+
+      .sub-page:not(.home-page) .page-hero h1 {
+        font-size: clamp(2.25rem, 10vw, 3.4rem);
+      }
+
+      .sub-page:not(.home-page) main > section:not(.page-hero) {
+        padding: 72px 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .sub-page:not(.home-page) {
+        --subpage-gutter: 20px;
+      }
+
+      .sub-page:not(.home-page) .page-hero,
+      .sub-page:not(.home-page) .page-hero .container {
+        min-height: 560px;
+      }
+
+      .sub-page:not(.home-page) .page-hero .container {
+        padding: 112px 0 58px;
+      }
+
+      .sub-page:not(.home-page) main > section:not(.page-hero) {
+        padding: 62px 0;
+      }
+
+      .sub-page:not(.home-page) .content-grid,
+      .sub-page:not(.home-page) .case-layout,
+      .sub-page:not(.home-page) .resource-group,
+      .sub-page:not(.home-page) .resource-callout-box {
+        gap: 32px;
+      }
+    }
+
+    /* Fixed background rhythm for internal pages. */
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(1) {
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.54), rgba(11, 13, 17, 0.26)),
+        linear-gradient(180deg, rgba(11, 13, 17, 0.16), rgba(11, 13, 17, 0.48)),
+        image-set(url("vision-altitude-background-dji0094.avif") type("image/avif"), url("vision-altitude-background-dji0094.webp") type("image/webp"), url("vision-altitude-background-dji0094.jpg") type("image/jpeg")) center / cover no-repeat !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(2),
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(n + 5),
+    body.sub-page:not(.home-page) main#contenu > section.faq-section {
+      background: #1c2229 !important;
+      box-shadow: none;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(3) {
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.54), rgba(11, 13, 17, 0.44)),
+        image-set(url("section-bg-01.avif") type("image/avif"), url("section-bg-01.webp") type("image/webp"), url("section-bg-01.jpg") type("image/jpeg")) center / cover no-repeat !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(4) {
+      background:
+        linear-gradient(90deg, rgba(11, 13, 17, 0.52), rgba(11, 13, 17, 0.44)),
+        image-set(url("section-bg-02.avif") type("image/avif"), url("section-bg-02.webp") type("image/webp"), url("section-bg-02.jpg") type("image/jpeg")) center / cover no-repeat !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(3),
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(4) {
+      color: #f4f6f8;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(3) :is(h2, h3, h4, strong, dt),
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(4) :is(h2, h3, h4, strong, dt) {
+      color: #ffffff !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(3) :is(p, li, dd, small),
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(4) :is(p, li, dd, small) {
+      color: #d2d9e1 !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(3) a:not(.button):not(.button-primary):not(.button-secondary),
+    body.sub-page:not(.home-page) main#contenu > section:nth-of-type(4) a:not(.button):not(.button-primary):not(.button-secondary) {
+      color: #d9e5f3;
+    }
+
+    /* Contrast corrections for components moved onto the dark visual system. */
+    body.sub-page:not(.home-page) main#contenu .partner-card-visual {
+      background: #ffffff;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partner-card-content {
+      color: #f4f6f8;
+      border-color: rgba(255, 255, 255, 0.16);
+      background: #171c22;
+      box-shadow: none;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partner-card-content h3 a {
+      color: #d9e5f3 !important;
+      text-decoration-color: #7e9ec1;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partner-card-content p {
+      color: #c2cad3 !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .trust-list .value-card span {
+      color: #ffffff;
+      border: 1px solid #7aa6d8;
+      background: #274c7d;
+    }
+
+    body.sub-page:not(.home-page) main#contenu :is(
+      .service-use-list,
+      .check-list,
+      .pricing-card ul,
+      .partnership-list
+    ) li::before {
+      background: #7aa6d8 !important;
+      box-shadow: 0 0 0 4px rgba(122, 166, 216, 0.2) !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .founder-list li::before {
+      color: #8bb4e0;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .case-card-action {
+      color: #d9e5f3 !important;
+      border: 1px solid rgba(217, 229, 243, 0.32);
+      background: rgba(217, 229, 243, 0.08) !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .travel-table :is(strong, b) {
+      color: #ffffff;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .travel-table span {
+      color: #c2cad3;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section.case-index-intro .section-heading h2 {
+      color: #ffffff !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu > section.case-index-intro .section-heading p,
+    body.sub-page:not(.home-page) main#contenu > section.case-index-intro .eyebrow {
+      color: #c2cad3 !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .trust-list .value-card,
+    body.sub-page:not(.home-page) main#contenu .trust-list .value-card:hover {
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partners-section .partner-card {
+      display: grid;
+      grid-template-rows: 220px 1fr;
+      min-height: 0;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partners-section .partner-card-visual,
+    body.sub-page:not(.home-page) main#contenu .partners-section .partner-card--securi .partner-card-visual,
+    body.sub-page:not(.home-page) main#contenu .partners-section .partner-card--abd3 .partner-card-visual {
+      width: 100%;
+      height: 220px;
+      min-height: 0;
+      margin: 0;
+      padding: 26px;
+      box-sizing: border-box;
+      transform: none;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .partners-section .partner-card-content {
+      width: 100%;
+      min-height: 0;
+      margin: 0;
+      padding: 24px 26px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 620px) {
+      body.sub-page:not(.home-page) main#contenu .partners-section .partner-card {
+        grid-template-rows: 190px 1fr;
+        padding: 12px;
+      }
+
+      body.sub-page:not(.home-page) main#contenu .partners-section .partner-card-visual,
+      body.sub-page:not(.home-page) main#contenu .partners-section .partner-card--securi .partner-card-visual,
+      body.sub-page:not(.home-page) main#contenu .partners-section .partner-card--abd3 .partner-card-visual {
+        height: 190px;
+        padding: 22px;
+      }
+
+      body.sub-page:not(.home-page) main#contenu .partners-section .partner-card-content {
+        padding: 22px;
+      }
+    }
