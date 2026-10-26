@@ -522,6 +522,39 @@ if (contactForm) {
   });
 }
 
+document.querySelectorAll("[data-case-study-grid]").forEach((grid) => {
+  const cards = [...grid.querySelectorAll(":scope > .case-card")];
+  const button = grid.closest(".case-study-section")?.querySelector("[data-case-study-more]");
+  const hiddenCards = cards.slice(6);
+
+  if (!button || hiddenCards.length === 0) {
+    return;
+  }
+
+  const setExpanded = (expanded) => {
+    hiddenCards.forEach((card) => {
+      card.hidden = !expanded;
+      card.classList.toggle("is-visible", expanded);
+    });
+    button.textContent = expanded ? "Afficher moins" : "Afficher plus";
+    button.setAttribute("aria-expanded", String(expanded));
+  };
+
+  setExpanded(false);
+  button.hidden = false;
+
+  button.addEventListener("click", () => {
+    const shouldExpand = button.getAttribute("aria-expanded") !== "true";
+    setExpanded(shouldExpand);
+
+    if (shouldExpand) {
+      window.requestAnimationFrame(() => {
+        hiddenCards[0]?.focus({ preventScroll: true });
+      });
+    }
+  });
+});
+
 const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {

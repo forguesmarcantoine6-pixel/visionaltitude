@@ -7792,3 +7792,19 @@
       content: none;
       display: none;
     }
+
+    body.sub-page:not(.home-page) main#contenu .case-study-more-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .case-study-more-button {
+      min-width: 180px;
+      justify-content: center;
+    }
+
+    body.sub-page:not(.home-page) main#contenu [data-case-study-grid] > .case-card[hidden],
+    body.sub-page:not(.home-page) main#contenu [data-case-study-more][hidden] {
+      display: none !important;
+    }
