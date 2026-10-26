@@ -7771,3 +7771,24 @@
         font-size: clamp(2rem, 9.2vw, 2.45rem);
       }
     }
+
+    body.sub-page:not(.home-page) main#contenu .service-showcase .service-use-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .service-showcase .service-use-list li::before {
+      width: 20px;
+      height: 2px;
+      flex: 0 0 20px;
+      margin: 0;
+      border-radius: 0;
+      background: #8bb4e0 !important;
+      box-shadow: none !important;
+    }
+
+    body.sub-page:not(.home-page) main#contenu .pricing-grid .pricing-card li::before {
+      content: none;
+      display: none;
+    }
