@@ -1,10 +1,28 @@
 # Consolidation des anciennes pages de photographie
-/photo-aerienne /photographie-aerienne/ 301
-/photo-aerienne/ /photographie-aerienne/ 301
-/photo-aerienne/index.html /photographie-aerienne/ 301
-/drone-photo /photographie-aerienne/ 301
-/drone-photo/ /photographie-aerienne/ 301
-/drone-photo/index.html /photographie-aerienne/ 301
-/drone-photographie /photographie-aerienne/ 301
-/drone-photographie/ /photographie-aerienne/ 301
-/drone-photographie/index.html /photographie-aerienne/ 301
+/photo-aerienne /tarifs/photographie-drone/ 301
+/photo-aerienne/ /tarifs/photographie-drone/ 301
+/photo-aerienne/index.html /tarifs/photographie-drone/ 301
+/drone-photo /tarifs/photographie-drone/ 301
+/drone-photo/ /tarifs/photographie-drone/ 301
+/drone-photo/index.html /tarifs/photographie-drone/ 301
+/drone-photographie /tarifs/photographie-drone/ 301
+/drone-photographie/ /tarifs/photographie-drone/ 301
+/drone-photographie/index.html /tarifs/photographie-drone/ 301
+
+# Anciennes pages principales remplacées par leurs premières sous-sections
+/services /tarifs/photographie-drone/ 301
+/services/ /tarifs/photographie-drone/ 301
+/services/index.html /tarifs/photographie-drone/ 301
+/portfolio /exemples-de-travaux/ 301
+/portfolio/ /exemples-de-travaux/ 301
+/portfolio/index.html /exemples-de-travaux/ 301
+
+# Ancienne page générale des zones remplacée par les pages service-ville
+/zones-desservies /photographie-aerienne/montreal/ 301
+/zones-desservies/ /photographie-aerienne/montreal/ 301
+/zones-desservies/index.html /photographie-aerienne/montreal/ 301
+
+# Ancienne page générale des secteurs remplacée par les pages service-secteur
+/secteurs-desservis /photographie-aerienne/construction/ 301
+/secteurs-desservis/ /photographie-aerienne/construction/ 301
+/secteurs-desservis/index.html /photographie-aerienne/construction/ 301
