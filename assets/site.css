@@ -10568,6 +10568,10 @@
       transition: max-height 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease 40ms, visibility 0s;
     }
 
+    #nav-zones-menu .nav-zone-group.is-open > .nav-zone-links {
+      max-height: 1200px;
+    }
+
     .nav-zone-toggle:focus-visible {
       outline: 2px solid #86aee0;
       outline-offset: -3px;
@@ -10616,6 +10620,10 @@
         visibility: visible;
         pointer-events: auto;
         transition: max-height 440ms cubic-bezier(0.22, 1, 0.36, 1), padding 280ms ease, opacity 200ms ease 40ms, visibility 0s;
+      }
+
+      .nav-nested-item.is-open > #nav-zones-menu {
+        max-height: 1440px;
       }
 
       .nav-nested-menu::before {
