@@ -9561,7 +9561,8 @@
     /* Keep the animated logo shine aligned with the mobile logo. */
     @media (max-width: 860px) {
       .home-page .site-header .brand,
-      .home-page .site-header.is-scrolled .brand {
+      .home-page .site-header.is-scrolled .brand,
+      .sub-page:not(.home-page) .site-header .brand {
         position: relative;
         top: auto;
         left: auto;
@@ -9569,7 +9570,8 @@
       }
 
       .home-page .site-header .brand::after,
-      .home-page .site-header.is-scrolled .brand::after {
+      .home-page .site-header.is-scrolled .brand::after,
+      .sub-page:not(.home-page) .site-header .brand::after {
         inset: 0;
         width: 100%;
         height: 100%;
