@@ -1,0 +1,119 @@
+.photo-rate-card .photo-session-calculator {
+  padding: 24px 20px;
+  color: #161b22;
+  border-bottom: 1px solid #d5dae0;
+}
+
+.photo-session-calculator [hidden] {
+  display: none !important;
+}
+
+.photo-session-calculator .photo-session-choices {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.photo-session-calculator legend {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 0;
+  color: #243f68;
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.photo-session-calculator .photo-session-choice {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  margin: 0 0 8px;
+  padding: 10px 12px;
+  border: 1px solid #c6ced9;
+  border-radius: 4px;
+  color: #161b22;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.photo-session-calculator .photo-session-choice:has(input:checked) {
+  border-color: #31517f;
+  background: #e5ecf5;
+}
+
+.photo-session-calculator .photo-session-choice:focus-within {
+  outline: 2px solid #243f68;
+  outline-offset: 2px;
+}
+
+.photo-session-calculator input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  accent-color: #243f68;
+}
+
+.photo-session-choice > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.photo-session-calculator .photo-session-choice strong {
+  color: #161b22;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.photo-session-choice > span > span {
+  color: #465971;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.photo-session-calculator .photo-session-summary {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.photo-session-summary > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.photo-session-summary dt,
+.photo-session-summary dd {
+  margin: 0;
+}
+
+.photo-session-summary dd {
+  color: #243f68;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.photo-session-calculator .photo-session-unit {
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-session-calculator .photo-session-choice {
+    transition: none;
+  }
+}
