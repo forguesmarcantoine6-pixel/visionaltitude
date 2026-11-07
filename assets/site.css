@@ -4212,6 +4212,8 @@
 
     .case-content {
       display: grid;
+      min-width: 0;
+      grid-template-columns: minmax(0, 1fr);
       gap: 28px;
     }
 
@@ -6304,6 +6306,14 @@
 
       .securi-hero {
         min-height: auto;
+      }
+
+      .securi-hero-grid {
+        min-width: 0;
+      }
+
+      .securi-hero h1 {
+        white-space: normal;
       }
 
       .securi-auto-carousel {
