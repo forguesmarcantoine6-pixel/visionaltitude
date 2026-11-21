@@ -1,0 +1,28 @@
+<!--
+Modele conserve de la vignette flottante Securi-Terre.
+Retire des trois pages tarifs le 2026-11-21.
+
+Pour reintegrer :
+- Copier le div.partner-widget ci-dessous, sans l'enveloppe template.
+- Le placer apres </main> et avant le footer dans tarifs/<service>/index.html.
+- Ces chemins relatifs sont prevus pour les pages tarifs a deux niveaux.
+- Ailleurs, adapter ../../assets/ et ../../prototype-partenariat-securi-terre/.
+- Les styles partner-* restent dans assets/site.css et assets/site.min.css.
+- Le comportement data-partner-widget reste dans assets/site.js et site.min.js.
+- Les logos et la page prototype-partenariat-securi-terre/ sont conserves.
+-->
+<template id="securi-terre-widget">
+<div class="partner-widget" data-partner-widget>
+    <button class="partner-float-button" type="button" aria-label="Ouvrir le panneau du partenaire recommandé Sécuri-Terre" aria-expanded="false" aria-controls="partner-recommended-panel" data-partner-toggle>
+      <img src="../../assets/securi-terre-shield-logo.png" alt="Sécuri-Terre" width="122" height="120" loading="lazy">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <div class="partner-panel" id="partner-recommended-panel" role="dialog" aria-modal="false" aria-labelledby="partner-recommended-title" hidden data-partner-panel tabindex="-1">
+      <p class="partner-panel-eyebrow" id="partner-recommended-title">PARTENAIRE RECOMMANDÉ</p>
+      <img class="partner-panel-logo" src="../../assets/securi-terre-logo.png" alt="Logo Sécuri-Terre" width="992" height="251" loading="lazy">
+      <p>Services spécialisés en détection souterraine et géoradar pour les projets de construction, d’excavation et de rénovation.</p>
+      <a class="partner-panel-cta" href="../../prototype-partenariat-securi-terre/">Leurs solutions →</a>
+    </div>
+  </div>
+</template>
+

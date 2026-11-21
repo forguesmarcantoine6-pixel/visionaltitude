@@ -1,0 +1,133 @@
+.pilot-certification {
+  --neutral-text-on-dark: #111111;
+  display: grid;
+  grid-template-columns: 80px minmax(230px, 0.95fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+  padding: 28px 32px;
+  border: 1px solid rgba(23, 26, 31, 0.14);
+  border-left: 3px solid #1f3a5f;
+  border-radius: 4px;
+  color: #111111;
+  background: #e6e9ec;
+}
+
+.pilot-certification-logo {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.pilot-certification-heading,
+.pilot-certification-copy {
+  min-width: 0;
+}
+
+body .pilot-certification .pilot-certification-title {
+  max-width: none;
+  margin: 0;
+  color: #1f3a5f;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.pilot-certification-title span {
+  display: block;
+  margin-top: 8px;
+  color: #1f3a5f;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Override the dark section theme only inside this light card. */
+body.sub-page:not(.home-page) main#contenu .pilot-certification .pilot-certification-title {
+  color: #1f3a5f !important;
+}
+
+body .pilot-certification .pilot-certification-copy .pilot-certification-issuer,
+body .pilot-certification .pilot-certification-copy .pilot-certification-description {
+  max-width: none;
+  margin: 0;
+  color: #111111;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+body .pilot-certification .pilot-certification-copy .pilot-certification-issuer {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+body .pilot-certification .pilot-certification-copy .pilot-certification-description {
+  color: #111111;
+}
+
+.home-page .hero-inner > .pilot-certification {
+  grid-area: meta;
+  width: 100%;
+  margin-block: 24px 40px;
+}
+
+.pilot-certification--compact {
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+  padding: 26px;
+}
+
+.pilot-certification--compact .pilot-certification-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.pilot-certification--compact .pilot-certification-copy {
+  grid-column: 1 / -1;
+}
+
+.case-index-intro .pilot-certification {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .pilot-certification {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 20px;
+    padding: 26px;
+  }
+
+  .pilot-certification .pilot-certification-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .pilot-certification-copy {
+    grid-column: 1 / -1;
+  }
+
+  .home-page .hero-inner > .pilot-certification {
+    width: calc(100% - 32px);
+    margin: 24px auto 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .pilot-certification {
+    gap: 18px;
+    padding: 22px 20px;
+  }
+
+  body .pilot-certification .pilot-certification-title {
+    font-size: 1.2rem;
+  }
+
+  .home-page .hero-inner > .pilot-certification {
+    width: calc(100% - 32px);
+    margin: 20px auto 28px;
+  }
+}

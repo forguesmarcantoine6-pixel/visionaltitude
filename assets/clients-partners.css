@@ -1,0 +1,115 @@
+.clients-partners {
+  --neutral-text-on-dark: #111111;
+  overflow: hidden;
+  min-width: 0;
+  padding: 40px 32px;
+  border: 0;
+  border-radius: 0;
+  color: #111111;
+  background: #ffffff;
+}
+
+body main#contenu .clients-partners .clients-partners-title {
+  max-width: none;
+  margin: 0 0 36px;
+  padding: 0;
+  color: #111111 !important;
+  background: transparent;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.clients-partners-logos {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 1px;
+  background: transparent;
+  list-style: none;
+}
+
+.clients-partners-logos > li {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: 136px;
+  padding: 18px 14px;
+  background: #ffffff;
+}
+
+.clients-partners-logos .media-loader-wrap {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+body .clients-partners .clients-partners-logos img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 96px;
+  object-fit: contain;
+  filter: none;
+}
+
+body .clients-partners .clients-partners-logo--abd3 img {
+  max-width: 140px;
+}
+
+.clients-partners-spacing {
+  margin-top: 40px;
+}
+
+.home-page .featured-proof > .clients-partners-spacing {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.case-index-intro .clients-partners {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1100px) {
+  .clients-partners-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .clients-partners {
+    padding: 28px 16px;
+  }
+
+  body main#contenu .clients-partners .clients-partners-title {
+    margin-bottom: 24px;
+    padding: 0;
+    font-size: 1.4rem;
+  }
+
+  .clients-partners-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .clients-partners-logos > li {
+    height: 112px;
+    padding: 16px 10px;
+  }
+
+  body .clients-partners .clients-partners-logos img {
+    height: 80px;
+  }
+
+  body .clients-partners .clients-partners-logo--abd3 img {
+    max-width: 120px;
+  }
+
+  .clients-partners-spacing {
+    margin-top: 28px;
+  }
+}

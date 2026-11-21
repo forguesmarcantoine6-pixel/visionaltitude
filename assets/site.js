@@ -48,8 +48,9 @@ const motionTextSelector = [
   "main .hero-meta strong",
   "main .hero-meta span"
 ].join(",");
+const firstPageSection = document.querySelector("main > section");
 const motionTextElements = [...document.querySelectorAll(motionTextSelector)]
-  .filter((element) => !element.closest(".hero-brand-stage") && !element.closest(".faq-section") && !element.closest(".case-faq") && !element.matches("[data-form-status]"));
+  .filter((element) => !firstPageSection?.contains(element) && !element.closest(".hero-brand-stage") && !element.closest(".faq-section") && !element.closest(".case-faq") && !element.matches("[data-form-status]"));
 
 if (window.location.protocol === "file:") {
   document.querySelectorAll("a[href$='/']").forEach((link) => {
@@ -323,12 +324,6 @@ document.querySelectorAll("[data-video-sequence]").forEach((frame) => {
 
 motionTextElements.forEach((element) => element.classList.add("text-clarify"));
 
-const setHeaderState = () => {
-  if (header) {
-    header.classList.toggle("is-scrolled", window.scrollY > 24);
-  }
-};
-
 const clarifyHeroLogo = () => {
   if (!heroLogo || heroLogo.classList.contains("is-clarifying")) {
     return;
@@ -589,17 +584,21 @@ document.querySelectorAll("[data-auto-carousel]").forEach((carousel) => {
 });
 
 window.addEventListener("scroll", () => {
-  setHeaderState();
   setHeroLogoState();
   setMotionTextState();
 }, { passive: true });
-setHeaderState();
 setHeroLogoState();
 setMotionTextState();
 
 if (contactForm) {
   const status = contactForm.querySelector("[data-form-status]");
   const submitButton = contactForm.querySelector('button[type="submit"]');
+  const submitLabel = submitButton?.textContent;
+  const successUrl = new URL(contactForm.dataset.successUrl || "confirmation/", window.location.href);
+  if (successUrl.protocol === "file:" && successUrl.pathname.endsWith("/")) {
+    successUrl.pathname += "index.html";
+  }
+  let isSubmitting = false;
   const SERVICE_ID = "service_6ako0fv";
   const TEMPLATE_ID = "template_rqhujvf";
   const PUBLIC_KEY = "wY9izdJjB7ZjNDmE8";
@@ -611,6 +610,7 @@ if (contactForm) {
 
     status.textContent = message;
     status.dataset.state = state;
+    status.hidden = !message;
   };
 
   contactForm.dataset.formReady = "true";
@@ -618,16 +618,23 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (isSubmitting) {
+      return;
+    }
+
     if (!contactForm.checkValidity()) {
       setFormStatus("Veuillez remplir les champs obligatoires avant d'envoyer la demande.", "error");
       contactForm.reportValidity();
       return;
     }
 
-    setFormStatus("Envoi en cours\u2026", "pending");
+    isSubmitting = true;
+    setFormStatus("", "");
+    contactForm.setAttribute("aria-busy", "true");
 
     if (submitButton) {
       submitButton.disabled = true;
+      submitButton.textContent = "Envoi en cours\u2026";
     }
 
     try {
@@ -651,13 +658,27 @@ if (contactForm) {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
       contactForm.reset();
-      setFormStatus("Votre demande a \u00e9t\u00e9 envoy\u00e9e avec succ\u00e8s.", "success");
+      window.location.assign(successUrl.href);
     } catch (error) {
+      isSubmitting = false;
+      contactForm.removeAttribute("aria-busy");
       setFormStatus("Une erreur est survenue. Veuillez r\u00e9essayer ou \u00e9crire directement \u00e0 info@visionaltitude.ca.", "error");
-    } finally {
       if (submitButton) {
         submitButton.disabled = false;
+        submitButton.textContent = submitLabel;
       }
+    }
+  });
+
+  window.addEventListener("pageshow", (event) => {
+    if (!event.persisted) {
+      return;
+    }
+    isSubmitting = false;
+    contactForm.removeAttribute("aria-busy");
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = submitLabel;
     }
   });
 }
@@ -695,7 +716,8 @@ document.querySelectorAll("[data-case-study-grid]").forEach((grid) => {
   });
 });
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements = [...document.querySelectorAll(".reveal")]
+  .filter((element) => !firstPageSection?.contains(element));
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver((entries) => {
