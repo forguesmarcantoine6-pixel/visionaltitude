@@ -1,11 +1,11 @@
 .pilot-certification {
   --neutral-text-on-dark: #111111;
   display: grid;
-  grid-template-columns: 80px minmax(230px, 0.95fr) minmax(0, 1.25fr);
+  grid-template-columns: 64px minmax(200px, 0.95fr) minmax(0, 1.25fr);
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   min-width: 0;
-  padding: 28px 32px;
+  padding: 20px 24px;
   border: 1px solid rgba(23, 26, 31, 0.14);
   border-left: 3px solid #1f3a5f;
   border-radius: 4px;
@@ -15,8 +15,8 @@
 
 .pilot-certification-logo {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
@@ -29,7 +29,7 @@ body .pilot-certification .pilot-certification-title {
   max-width: none;
   margin: 0;
   color: #1f3a5f;
-  font-size: 1.35rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0;
@@ -38,9 +38,9 @@ body .pilot-certification .pilot-certification-title {
 
 .pilot-certification-title span {
   display: block;
-  margin-top: 8px;
+  margin-top: 4px;
   color: #1f3a5f;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
@@ -54,18 +54,51 @@ body .pilot-certification .pilot-certification-copy .pilot-certification-descrip
   max-width: none;
   margin: 0;
   color: #111111;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.45;
 }
 
 body .pilot-certification .pilot-certification-copy .pilot-certification-issuer {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-weight: 700;
 }
 
 body .pilot-certification .pilot-certification-copy .pilot-certification-description {
   color: #111111;
+}
+
+.pilot-insurance {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(31, 58, 95, 0.2);
+}
+
+body .pilot-certification .pilot-insurance-title,
+body.sub-page:not(.home-page) main#contenu .pilot-certification .pilot-insurance-title {
+  max-width: none;
+  margin: 0;
+  color: #1f3a5f !important;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+body .pilot-certification .pilot-insurance-description,
+body.sub-page:not(.home-page) main#contenu .pilot-certification .pilot-insurance-description {
+  max-width: none;
+  margin: 0;
+  color: #111111 !important;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .home-page .hero-inner > .pilot-certification {
@@ -75,39 +108,68 @@ body .pilot-certification .pilot-certification-copy .pilot-certification-descrip
 }
 
 .pilot-certification--compact {
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 16px;
   margin-top: 32px;
-  padding: 26px;
+  padding: 20px;
 }
 
 .pilot-certification--compact .pilot-certification-logo {
-  width: 72px;
-  height: 72px;
+  width: 56px;
+  height: 56px;
 }
 
 .pilot-certification--compact .pilot-certification-copy {
   grid-column: 1 / -1;
 }
 
+.pilot-certification--compact .pilot-insurance {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+}
+
 .case-index-intro .pilot-certification {
   margin-bottom: 40px;
 }
 
+.pilot-certification-footer {
+  width: var(--container, min(1180px, calc(100% - 40px)));
+  margin-inline: auto;
+  padding-top: 32px;
+}
+
+.pilot-certification-page-footer {
+  padding-bottom: 32px;
+  background: #e6e9ec;
+}
+
+/* Keep the printable service offer's existing pagination. */
+@media print {
+  .pilot-certification-page-footer {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .pilot-certification {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 20px;
-    padding: 26px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    padding: 20px;
   }
 
   .pilot-certification .pilot-certification-logo {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
   }
 
   .pilot-certification-copy {
     grid-column: 1 / -1;
+  }
+
+  .pilot-insurance {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding-top: 14px;
   }
 
   .home-page .hero-inner > .pilot-certification {
@@ -118,12 +180,8 @@ body .pilot-certification .pilot-certification-copy .pilot-certification-descrip
 
 @media (max-width: 520px) {
   .pilot-certification {
-    gap: 18px;
-    padding: 22px 20px;
-  }
-
-  body .pilot-certification .pilot-certification-title {
-    font-size: 1.2rem;
+    gap: 12px;
+    padding: 18px 16px;
   }
 
   .home-page .hero-inner > .pilot-certification {

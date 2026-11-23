@@ -1,0 +1,47 @@
+#contenu > .page-hero .pilot-certification {
+  width: 100%;
+  margin-top: 28px;
+}
+
+#contenu > .page-hero .pilot-certification .pilot-certification-copy p {
+  max-width: none;
+  margin: 0;
+  color: #111111;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+#contenu > .page-hero .pilot-certification .pilot-certification-copy .pilot-certification-issuer {
+  margin-bottom: 4px;
+}
+
+body.sub-page main#contenu .work-section-title {
+  margin: 0 0 32px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+#projets,
+#galerie-youtube,
+#galerie-photo,
+#exemples-de-travaux {
+  scroll-margin-top: 90px;
+}
+
+#exemples-de-travaux .project-details h3 {
+  margin: 14px 0 10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+@media (max-width: 620px) {
+  body.sub-page main#contenu .work-section-title {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+}

@@ -3575,10 +3575,21 @@
     }
 
     .footer-social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: inherit;
       font-size: inherit;
       font-weight: inherit;
       line-height: inherit;
+    }
+
+    .footer-social-links .footer-social-icon {
+      display: block;
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
     }
 
     .footer-social-links a:hover,
@@ -10980,6 +10991,7 @@ body.network-page main#contenu .network-partners .network-compact-grid .partner-
 /* Button accents are independent from the blue brand palette. */
 :root {
   --button-accent: #2ec4b6;
+  --button-accent-hover: #29b0a4;
   --button-ink: #0b0d11;
 }
 
@@ -10989,6 +11001,7 @@ body.network-page main#contenu .network-partners .network-compact-grid .partner-
 .partner-float-button,
 .site-footer {
   --button-accent: #1f3a5f;
+  --button-accent-hover: #1f3a5f;
   --button-ink: #ffffff;
 }
 
@@ -11013,9 +11026,15 @@ body .carousel-button:is(:hover, :focus-visible) {
   background: var(--button-accent) !important;
 }
 
+body :is(.button-primary, .pricing-cta-button, .partner-panel-cta, .pricing-link-button, .carousel-button):hover:where(:not(:disabled)),
+body .case-sidebar .button-secondary:hover {
+  border-color: var(--button-accent-hover) !important;
+  background: var(--button-accent-hover) !important;
+}
+
 body :is(button, .button, .pricing-cta-button, .pricing-link-button, .partner-panel-cta):focus-visible {
-  outline: 2px solid var(--button-accent);
-  outline-offset: 3px;
+  outline: 3px solid var(--button-accent);
+  outline-offset: 4px;
 }
 
 body input:is([type="radio"], [type="checkbox"]) {
@@ -11063,6 +11082,36 @@ body:is(.home-page, .sub-page, .securi-page) {
 .mobile-page-brand {
   display: none;
 }
+
+a[href^="tel:"] {
+  white-space: nowrap;
+}
+
+a[href^="tel:"] > .phone-icon {
+  display: inline-block;
+  flex: 0 0 0.95em;
+  width: 0.95em;
+  height: 0.95em;
+  margin-right: 0.45em;
+  vertical-align: -0.12em;
+}
+
+.button[href^="tel:"] > .phone-icon {
+  margin-right: 0;
+}
+
+body .button[href^="tel:"] {
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  background: transparent !important;
+}
+
+body .button[href^="tel:"]:is(:hover, :focus-visible) {
+  color: #141414 !important;
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
 
 @media (max-width: 860px) {
   body.has-mobile-page-brand .site-header .brand {

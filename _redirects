@@ -13,9 +13,20 @@
 /services /tarifs/photographie-drone/ 301
 /services/ /tarifs/photographie-drone/ 301
 /services/index.html /tarifs/photographie-drone/ 301
-/portfolio /exemples-de-travaux/ 301
-/portfolio/ /exemples-de-travaux/ 301
-/portfolio/index.html /exemples-de-travaux/ 301
+/portfolio /etudes-de-cas/ 301
+/portfolio/ /etudes-de-cas/ 301
+/portfolio/index.html /etudes-de-cas/ 301
+
+# Galeries et exemples reunis dans Etudes de cas
+/galerie-youtube /etudes-de-cas/#galerie-youtube 301
+/galerie-youtube/ /etudes-de-cas/#galerie-youtube 301
+/galerie-youtube/index.html /etudes-de-cas/#galerie-youtube 301
+/galerie-photo /etudes-de-cas/#galerie-photo 301
+/galerie-photo/ /etudes-de-cas/#galerie-photo 301
+/galerie-photo/index.html /etudes-de-cas/#galerie-photo 301
+/exemples-de-travaux /etudes-de-cas/#exemples-de-travaux 301
+/exemples-de-travaux/ /etudes-de-cas/#exemples-de-travaux 301
+/exemples-de-travaux/index.html /etudes-de-cas/#exemples-de-travaux 301
 
 # Ancienne page générale des zones remplacée par les pages service-ville
 /zones-desservies /photographie-aerienne/montreal/ 301
