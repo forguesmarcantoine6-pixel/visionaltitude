@@ -9,6 +9,17 @@
 /drone-photographie/ /tarifs/photographie-drone/ 301
 /drone-photographie/index.html /tarifs/photographie-drone/ 301
 
+# Pages Grand Montreal remplacees par les pages Montreal correspondantes
+/photographie-aerienne/grand-montreal /photographie-aerienne/montreal/ 301
+/photographie-aerienne/grand-montreal/ /photographie-aerienne/montreal/ 301
+/photographie-aerienne/grand-montreal/index.html /photographie-aerienne/montreal/ 301
+/videographie-drone/grand-montreal /videographie-drone/montreal/ 301
+/videographie-drone/grand-montreal/ /videographie-drone/montreal/ 301
+/videographie-drone/grand-montreal/index.html /videographie-drone/montreal/ 301
+/suivi-de-chantier/grand-montreal /suivi-de-chantier/montreal/ 301
+/suivi-de-chantier/grand-montreal/ /suivi-de-chantier/montreal/ 301
+/suivi-de-chantier/grand-montreal/index.html /suivi-de-chantier/montreal/ 301
+
 # Anciennes pages principales remplacées par leurs premières sous-sections
 /services /tarifs/photographie-drone/ 301
 /services/ /tarifs/photographie-drone/ 301
