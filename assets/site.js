@@ -369,19 +369,18 @@ const clarifyText = (element) => {
     return;
   }
 
-  void element.offsetWidth;
   element.classList.add("is-clarifying");
 };
 
 const setMotionTextState = () => {
-  motionTextElements.forEach((element) => {
-    const box = element.getBoundingClientRect();
-    const isVisible = box.bottom > window.innerHeight * 0.08 && box.top < window.innerHeight * 0.88;
-
-    if (isVisible) {
-      clarifyText(element);
+  const visibleElements = motionTextElements.filter((element) => {
+    if (element.classList.contains("is-clarifying")) {
+      return false;
     }
+    const box = element.getBoundingClientRect();
+    return box.bottom > window.innerHeight * 0.08 && box.top < window.innerHeight * 0.88;
   });
+  visibleElements.forEach(clarifyText);
 };
 
 const closeNestedNavMenus = (exception = null) => {
@@ -612,9 +611,15 @@ document.querySelectorAll("[data-auto-carousel]").forEach((carousel) => {
   }, 5000);
 });
 
+let motionFramePending = false;
 window.addEventListener("scroll", () => {
-  setHeroLogoState();
-  setMotionTextState();
+  if (motionFramePending) return;
+  motionFramePending = true;
+  window.requestAnimationFrame(() => {
+    motionFramePending = false;
+    setHeroLogoState();
+    setMotionTextState();
+  });
 }, { passive: true });
 setHeroLogoState();
 setMotionTextState();

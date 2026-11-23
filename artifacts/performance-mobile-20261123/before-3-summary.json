@@ -1,0 +1,15 @@
+{
+  "mode": "before",
+  "method": "simulate",
+  "run": 3,
+  "version": "12.8.2",
+  "fetchTime": "2026-11-23T18:19:28.941Z",
+  "score": 88,
+  "fcp": 1973.4450499999998,
+  "lcp": 3611.742400000001,
+  "tbt": 46,
+  "cls": 0,
+  "bytes": 2150753,
+  "requests": 50,
+  "warnings": []
+}

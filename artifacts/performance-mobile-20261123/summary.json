@@ -1,0 +1,621 @@
+{
+  "date": "2026-11-23",
+  "status": "Local changes only; no production deployment or new PageSpeed Insights score.",
+  "productionDiagnostic": {
+    "score": 46,
+    "fcp": 7002.3234999999995,
+    "lcp": 10152.3235,
+    "ttfbObserved": 104.652,
+    "lcpElement": "section.hero > div.hero-inner > div.hero-copy > h1",
+    "requests": 51,
+    "transferredBytes": 2164995,
+    "thirdParties": [
+      {
+        "entity": "Google Tag Manager",
+        "bytes": 184399,
+        "cpuMs": 915.2559999999954
+      },
+      {
+        "entity": "YouTube",
+        "bytes": 1163713,
+        "cpuMs": 3.12
+      },
+      {
+        "entity": "Google Fonts",
+        "bytes": 35220,
+        "cpuMs": 0
+      },
+      {
+        "entity": "Other Google APIs/SDKs",
+        "bytes": 25798,
+        "cpuMs": 0
+      },
+      {
+        "entity": "Cloudflare",
+        "bytes": 10478,
+        "cpuMs": 77.66400000000002
+      },
+      {
+        "entity": "Google CDN",
+        "bytes": 734,
+        "cpuMs": 0
+      },
+      {
+        "entity": "Google Analytics",
+        "bytes": 559,
+        "cpuMs": 0
+      }
+    ],
+    "apiPageSpeed": "HTTP 429: daily quota exhausted."
+  },
+  "productionRecheckWithoutDeployment": {
+    "mode": "live",
+    "method": "simulate",
+    "run": 1,
+    "version": "12.8.2",
+    "fetchTime": "2026-11-23T18:21:12.665Z",
+    "score": 68,
+    "fcp": 3362.132,
+    "lcp": 6587.132,
+    "tbt": 146.5,
+    "cls": 0,
+    "bytes": 2164556,
+    "requests": 52,
+    "warnings": []
+  },
+  "assets": [
+    {
+      "file": "assets/site.min.css",
+      "before": 282303,
+      "after": 201186,
+      "brotliBefore": 34466,
+      "brotliAfter": 29550
+    },
+    {
+      "file": "assets/site.min.js",
+      "before": 29652,
+      "after": 24120,
+      "brotliBefore": 6509,
+      "brotliAfter": 5971
+    }
+  ],
+  "validation": {
+    "unchangedMediaFiles": 355,
+    "unchangedPageBodies": 97,
+    "cssRulesValuesAndOrderUnchanged": true,
+    "comparisons": [
+      {
+        "file": "index.html",
+        "width": 1440,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "a-propos/index.html",
+        "width": 1440,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "etudes-de-cas/index.html",
+        "width": 1440,
+        "changed": 61444,
+        "significant": 523,
+        "max": 17,
+        "mean": 0.0455375,
+        "geometryChanges": []
+      },
+      {
+        "file": "photographie-aerienne/montreal/index.html",
+        "width": 1440,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "tarifs/photographie-drone/index.html",
+        "width": 1440,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "contact/index.html",
+        "width": 1440,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "index.html",
+        "width": 768,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "a-propos/index.html",
+        "width": 768,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "etudes-de-cas/index.html",
+        "width": 768,
+        "changed": 64519,
+        "significant": 970,
+        "max": 20,
+        "mean": 0.0954921875,
+        "geometryChanges": []
+      },
+      {
+        "file": "photographie-aerienne/montreal/index.html",
+        "width": 768,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "tarifs/photographie-drone/index.html",
+        "width": 768,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "contact/index.html",
+        "width": 768,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "a-propos/index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "etudes-de-cas/index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "photographie-aerienne/montreal/index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "tarifs/photographie-drone/index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      },
+      {
+        "file": "contact/index.html",
+        "width": 390,
+        "changed": 0,
+        "significant": 0,
+        "max": 0,
+        "mean": 0,
+        "geometryChanges": []
+      }
+    ],
+    "trackingBranches": 4,
+    "functionality": [
+      "navigation",
+      "FAQ",
+      "footer pagination",
+      "gallery",
+      "carousel",
+      "contact error",
+      "contact success (mocked)"
+    ]
+  },
+  "comparisons": [
+    {
+      "method": "simulate",
+      "before": [
+        {
+          "mode": "before",
+          "method": "simulate",
+          "run": 1,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:18:48.346Z",
+          "score": 88,
+          "fcp": 2027.74005,
+          "lcp": 3620.6148000000003,
+          "tbt": 49.5,
+          "cls": 0,
+          "bytes": 2147916,
+          "requests": 50,
+          "warnings": []
+        },
+        {
+          "mode": "before",
+          "method": "simulate",
+          "run": 2,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:19:08.715Z",
+          "score": 88,
+          "fcp": 2043.69315,
+          "lcp": 3615.6860000000006,
+          "tbt": 90.5,
+          "cls": 0,
+          "bytes": 2147476,
+          "requests": 50,
+          "warnings": []
+        },
+        {
+          "mode": "before",
+          "method": "simulate",
+          "run": 3,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:19:28.941Z",
+          "score": 88,
+          "fcp": 1973.4450499999998,
+          "lcp": 3611.742400000001,
+          "tbt": 46,
+          "cls": 0,
+          "bytes": 2150753,
+          "requests": 50,
+          "warnings": []
+        }
+      ],
+      "after": [
+        {
+          "mode": "after",
+          "method": "simulate",
+          "run": 1,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:18:58.675Z",
+          "score": 89,
+          "fcp": 2007.715,
+          "lcp": 3609.9445999999994,
+          "tbt": 56,
+          "cls": 0,
+          "bytes": 2142952,
+          "requests": 50,
+          "warnings": []
+        },
+        {
+          "mode": "after",
+          "method": "simulate",
+          "run": 2,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:19:18.882Z",
+          "score": 87,
+          "fcp": 2077.0378,
+          "lcp": 3695.5156500000003,
+          "tbt": 86,
+          "cls": 0,
+          "bytes": 2142453,
+          "requests": 49,
+          "warnings": []
+        },
+        {
+          "mode": "after",
+          "method": "simulate",
+          "run": 3,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:19:38.820Z",
+          "score": 88,
+          "fcp": 1945.5561000000002,
+          "lcp": 3683.86195,
+          "tbt": 51,
+          "cls": 0,
+          "bytes": 2142913,
+          "requests": 50,
+          "warnings": []
+        }
+      ],
+      "medians": {
+        "score": {
+          "before": 88,
+          "after": 88
+        },
+        "fcp": {
+          "before": 2027.74005,
+          "after": 2007.715
+        },
+        "lcp": {
+          "before": 3615.6860000000006,
+          "after": 3683.86195
+        },
+        "tbt": {
+          "before": 49.5,
+          "after": 56
+        },
+        "cls": {
+          "before": 0,
+          "after": 0
+        },
+        "bytes": {
+          "before": 2147916,
+          "after": 2142913
+        }
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "method": "devtools",
+      "before": [
+        {
+          "mode": "before",
+          "method": "devtools",
+          "run": 1,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:14:59.711Z",
+          "score": 54,
+          "fcp": 3875.472,
+          "lcp": 3875.472,
+          "tbt": 1291.713999999999,
+          "cls": 0,
+          "bytes": 1963927,
+          "requests": 48,
+          "warnings": []
+        },
+        {
+          "mode": "before",
+          "method": "devtools",
+          "run": 2,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:15:58.740Z",
+          "score": 55,
+          "fcp": 3796.391,
+          "lcp": 3796.391,
+          "tbt": 1247.8290000000015,
+          "cls": 0,
+          "bytes": 1963331,
+          "requests": 48,
+          "warnings": []
+        },
+        {
+          "mode": "before",
+          "method": "devtools",
+          "run": 3,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:16:50.189Z",
+          "score": 87,
+          "fcp": 2730.142,
+          "lcp": 2730.142,
+          "tbt": 262.24199987793054,
+          "cls": 0,
+          "bytes": 1997165,
+          "requests": 47,
+          "warnings": []
+        }
+      ],
+      "after": [
+        {
+          "mode": "after",
+          "method": "devtools",
+          "run": 1,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:15:29.046Z",
+          "score": 64,
+          "fcp": 3204.351,
+          "lcp": 3204.351,
+          "tbt": 1079.2640000000001,
+          "cls": 0,
+          "bytes": 1959111,
+          "requests": 48,
+          "warnings": []
+        },
+        {
+          "mode": "after",
+          "method": "devtools",
+          "run": 2,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:16:24.825Z",
+          "score": 91,
+          "fcp": 2323.856,
+          "lcp": 2323.856,
+          "tbt": 243.49399987792867,
+          "cls": 0,
+          "bytes": 1992157,
+          "requests": 47,
+          "warnings": []
+        },
+        {
+          "mode": "after",
+          "method": "devtools",
+          "run": 3,
+          "version": "12.8.2",
+          "fetchTime": "2026-11-23T18:17:15.667Z",
+          "score": 91,
+          "fcp": 2244.927,
+          "lcp": 2244.927,
+          "tbt": 266.03499999999985,
+          "cls": 0,
+          "bytes": 1992219,
+          "requests": 48,
+          "warnings": []
+        }
+      ],
+      "medians": {
+        "score": {
+          "before": 55,
+          "after": 91
+        },
+        "fcp": {
+          "before": 3796.391,
+          "after": 2323.856
+        },
+        "lcp": {
+          "before": 3796.391,
+          "after": 2323.856
+        },
+        "tbt": {
+          "before": 1247.8290000000015,
+          "after": 266.03499999999985
+        },
+        "cls": {
+          "before": 0,
+          "after": 0
+        },
+        "bytes": {
+          "before": 1963927,
+          "after": 1992157
+        }
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 5250,
+        "pauseAfterLoadMs": 5250,
+        "networkQuietThresholdMs": 5250,
+        "cpuQuietThresholdMs": 5250,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "devtools",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      }
+    }
+  ]
+}

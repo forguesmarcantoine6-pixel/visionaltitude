@@ -1,0 +1,47 @@
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('js', new Date());
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    (() => {
+      let started = false;
+      let paintObserver;
+      const loadTagManager = () => {
+        if (started) return;
+        started = true;
+        paintObserver?.disconnect();
+        document.removeEventListener('pointerdown', loadTagManager, true);
+        document.removeEventListener('keydown', loadTagManager, true);
+        document.removeEventListener('visibilitychange', onVisibilityChange);
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-548SC7SH';
+        document.head.appendChild(script);
+      };
+      const onVisibilityChange = () => {
+        if (document.visibilityState === 'hidden') loadTagManager();
+      };
+      // Keep events queued from navigation; let the content paint before GTM runs.
+      document.addEventListener('pointerdown', loadTagManager, { capture: true, passive: true });
+      document.addEventListener('keydown', loadTagManager, { capture: true });
+      document.addEventListener('visibilitychange', onVisibilityChange);
+      if (document.visibilityState === 'hidden') {
+        loadTagManager();
+      } else if (window.PerformanceObserver?.supportedEntryTypes?.includes('paint')) {
+        paintObserver = new PerformanceObserver((list) => {
+          if (list.getEntries().some((entry) => entry.name === 'first-contentful-paint')) loadTagManager();
+        });
+        paintObserver.observe({ type: 'paint', buffered: true });
+      } else {
+        requestAnimationFrame(() => requestAnimationFrame(loadTagManager));
+      }
+    })();
+  </script>
+  <!-- End Google Tag Manager -->

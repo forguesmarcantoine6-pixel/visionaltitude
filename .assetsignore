@@ -3,3 +3,7 @@
 node_modules
 node_modules/**
 .DS_Store
+.edge-check
+.edge-check/**
+artifacts/performance-mobile-20261123
+artifacts/performance-mobile-20261123/**

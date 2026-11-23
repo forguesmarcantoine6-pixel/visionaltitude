@@ -1,0 +1,176 @@
+{
+  "comparisons": [
+    {
+      "file": "index.html",
+      "width": 1440,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "a-propos/index.html",
+      "width": 1440,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "etudes-de-cas/index.html",
+      "width": 1440,
+      "changed": 61444,
+      "significant": 523,
+      "max": 17,
+      "mean": 0.0455375,
+      "geometryChanges": []
+    },
+    {
+      "file": "photographie-aerienne/montreal/index.html",
+      "width": 1440,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "tarifs/photographie-drone/index.html",
+      "width": 1440,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "contact/index.html",
+      "width": 1440,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "index.html",
+      "width": 768,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "a-propos/index.html",
+      "width": 768,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "etudes-de-cas/index.html",
+      "width": 768,
+      "changed": 64519,
+      "significant": 970,
+      "max": 20,
+      "mean": 0.0954921875,
+      "geometryChanges": []
+    },
+    {
+      "file": "photographie-aerienne/montreal/index.html",
+      "width": 768,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "tarifs/photographie-drone/index.html",
+      "width": 768,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "contact/index.html",
+      "width": 768,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "a-propos/index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "etudes-de-cas/index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "photographie-aerienne/montreal/index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "tarifs/photographie-drone/index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    },
+    {
+      "file": "contact/index.html",
+      "width": 390,
+      "changed": 0,
+      "significant": 0,
+      "max": 0,
+      "mean": 0,
+      "geometryChanges": []
+    }
+  ],
+  "trackingBranches": 4,
+  "functionality": [
+    "navigation",
+    "FAQ",
+    "footer pagination",
+    "gallery",
+    "carousel",
+    "contact error",
+    "contact success (mocked)"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "mode": "after",
+  "method": "devtools",
+  "run": 1,
+  "version": "12.8.2",
+  "fetchTime": "2026-11-23T18:15:29.046Z",
+  "score": 64,
+  "fcp": 3204.351,
+  "lcp": 3204.351,
+  "tbt": 1079.2640000000001,
+  "cls": 0,
+  "bytes": 1959111,
+  "requests": 48,
+  "warnings": []
+}

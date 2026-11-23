@@ -1,0 +1,15 @@
+{
+  "mode": "live",
+  "method": "simulate",
+  "run": 1,
+  "version": "12.8.2",
+  "fetchTime": "2026-11-23T18:21:12.665Z",
+  "score": 68,
+  "fcp": 3362.132,
+  "lcp": 6587.132,
+  "tbt": 146.5,
+  "cls": 0,
+  "bytes": 2164556,
+  "requests": 52,
+  "warnings": []
+}
