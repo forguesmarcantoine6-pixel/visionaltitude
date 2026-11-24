@@ -20,10 +20,12 @@
         document.removeEventListener('pointerdown', loadTagManager, true);
         document.removeEventListener('keydown', loadTagManager, true);
         document.removeEventListener('visibilitychange', onVisibilityChange);
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBHM964F';
-        document.head.appendChild(script);
+        for (const containerId of ['GTM-PBHM964F', 'GTM-548SC7SH']) {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId;
+          document.head.appendChild(script);
+        }
       };
       const onVisibilityChange = () => {
         if (document.visibilityState === 'hidden') loadTagManager();
