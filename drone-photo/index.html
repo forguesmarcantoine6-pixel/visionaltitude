@@ -13,28 +13,106 @@
       ad_personalization: 'denied'
     });
     gtag('js', new Date());
-    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
     (() => {
+      const storageKey = 'vision-altitude-consent-v1';
+      const lifetime = 180 * 24 * 60 * 60 * 1000;
+      const analyticsDisableKey = 'ga-disable-G-J17B9YFL5K';
+      const readChoice = () => {
+        try {
+          const saved = JSON.parse(localStorage.getItem(storageKey));
+          if (saved?.version === 1 && typeof saved.analytics === 'boolean' &&
+              Number.isFinite(saved.expiresAt) && saved.expiresAt > Date.now() &&
+              saved.expiresAt <= Date.now() + lifetime) return saved;
+        } catch (_) { /* Storage can be unavailable in private browsers. */ }
+        return null;
+      };
+      let choice = readChoice();
       let started = false;
       let paintObserver;
+      const clearAnalyticsCookies = () => {
+        const domains = [''];
+        const labels = location.hostname.split('.');
+        for (let index = 0; index < labels.length - 1; index++) {
+          domains.push('; domain=' + labels.slice(index).join('.'));
+        }
+        const paths = new Set(['/']);
+        const segments = location.pathname.split('/');
+        for (let index = 1; index < segments.length; index++) {
+          const path = segments.slice(0, index + 1).join('/');
+          paths.add(path);
+          paths.add(path + '/');
+        }
+        for (const cookie of document.cookie.split(';')) {
+          const name = cookie.split('=')[0].trim();
+          if (!/^(_ga(?:_|$)|_gid$|_gat(?:_|$)|_gcl_)/.test(name)) continue;
+          for (const domain of domains) {
+            for (const path of paths) {
+              document.cookie = name + '=; Max-Age=0; path=' + path + domain;
+            }
+          }
+        }
+      };
+      const updateConsent = () => {
+        const granted = choice?.analytics === true;
+        window[analyticsDisableKey] = !granted;
+        gtag('consent', 'update', {
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+        if (!granted) clearAnalyticsCookies();
+      };
       const loadTagManager = () => {
-        if (started) return;
+        if (started || choice?.analytics !== true) return;
         started = true;
         paintObserver?.disconnect();
         document.removeEventListener('pointerdown', loadTagManager, true);
         document.removeEventListener('keydown', loadTagManager, true);
         document.removeEventListener('visibilitychange', onVisibilityChange);
-        for (const containerId of ['GTM-PBHM964F', 'GTM-548SC7SH']) {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId;
-          document.head.appendChild(script);
-        }
+        window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBHM964F';
+        document.head.appendChild(script);
       };
       const onVisibilityChange = () => {
         if (document.visibilityState === 'hidden') loadTagManager();
       };
-      // Keep events queued from navigation; let the content paint before GTM runs.
+      const notify = () => window.dispatchEvent(new CustomEvent('va:consent-change'));
+      const refreshChoice = () => {
+        const saved = readChoice();
+        if (JSON.stringify(saved) === JSON.stringify(choice)) return;
+        choice = saved;
+        updateConsent();
+        if (choice?.analytics) loadTagManager();
+        notify();
+      };
+      window.visionAltitudeConsent = {
+        getChoice: () => choice ? { ...choice } : null,
+        setAnalytics: (analytics) => {
+          if (typeof analytics !== 'boolean') return false;
+          choice = { version: 1, analytics, expiresAt: Date.now() + lifetime };
+          let persisted = false;
+          try {
+            localStorage.setItem(storageKey, JSON.stringify(choice));
+            persisted = true;
+          } catch (_) { /* Honor the choice on this page even if it cannot be saved. */ }
+          updateConsent();
+          if (analytics) loadTagManager();
+          notify();
+          return persisted;
+        }
+      };
+      updateConsent();
+      window.addEventListener('storage', (event) => {
+        if (event.key === storageKey || event.key === null) refreshChoice();
+      });
+      window.addEventListener('pageshow', refreshChoice);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && choice?.expiresAt <= Date.now()) refreshChoice();
+      });
+      // Restored consent may load after first paint; a new choice loads immediately.
       document.addEventListener('pointerdown', loadTagManager, { capture: true, passive: true });
       document.addEventListener('keydown', loadTagManager, { capture: true });
       document.addEventListener('visibilitychange', onVisibilityChange);
@@ -69,6 +147,8 @@
   </script>
   <link rel="stylesheet" href="../assets/navigation.css?v=20261121-hover-fix-v2">
   <link rel="stylesheet" href="../assets/pilot-certification.css?v=20261122-qualifications-compact">
+  <link rel="stylesheet" href="../assets/consent.css?v=20261127-v2">
+  <script src="../assets/consent.js?v=20261127-v2" defer></script>
 </head>
 <body class="sub-page has-mobile-page-brand has-promoted-navigation">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
