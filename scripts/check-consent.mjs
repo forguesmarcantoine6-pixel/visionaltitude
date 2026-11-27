@@ -72,6 +72,7 @@ check('No consent: deny all and do not load GTM on paint, key, pointer or hidden
     const h = harness(undefined, options);
     h.paint(); h.frame(); h.event('pointerdown'); h.event('keydown'); h.event('visibilitychange');
     assert.equal(h.scripts.length, 0);
+    assert.ok(!h.window.dataLayer.some(item => item[0] === 'js'));
     assert.equal(h.api.getChoice(), null);
     assert.equal(h.window['ga-disable-G-J17B9YFL5K'], true);
     const consent = h.window.dataLayer.filter(item => item[0] === 'consent');
@@ -86,11 +87,13 @@ check('Accept: update consent before one GTM load; advertising remains denied', 
   h.api.setAnalytics(true); h.paint(); h.event('pointerdown');
   assert.equal(h.scripts.length, 1);
   assert.equal(h.scripts[0].async, true);
-  assert.equal(h.scripts[0].src, 'https://www.googletagmanager.com/gtm.js?id=GTM-PBHM964F');
+  assert.equal(h.scripts[0].src, 'https://www.googletagmanager.com/gtm.js?id=GTM-548SC7SH');
   assert.equal(h.window['ga-disable-G-J17B9YFL5K'], false);
   const entries = h.window.dataLayer;
   const start = entries.findIndex(item => item.event === 'gtm.js');
-  assert.equal(entries[start - 1][2].analytics_storage, 'granted');
+  const initialization = entries.findIndex(item => item[0] === 'js');
+  assert.equal(entries[initialization - 1][2].analytics_storage, 'granted');
+  assert.ok(initialization < start);
   for (const item of entries.filter(item => item[0] === 'consent')) {
     for (const name of ['ad_storage', 'ad_user_data', 'ad_personalization']) assert.equal(item[2][name], 'denied');
   }
@@ -116,6 +119,8 @@ check('Restore acceptance before GTM; keep first-paint scheduling', () => {
     if (!options.hidden) assert.equal(h.scripts.length, 0);
     h.paint(); h.frame(); h.event('keydown');
     assert.equal(h.scripts.length, 1);
+    const initialization = h.window.dataLayer.findIndex(item => item[0] === 'js');
+    assert.equal(h.window.dataLayer[initialization - 1][2].analytics_storage, 'granted');
     assert.equal(h.window['ga-disable-G-J17B9YFL5K'], false);
   }
   const h = harness(saved(false)); h.paint();
@@ -176,7 +181,7 @@ check('Every tracked page has the same single-container bootstrap and valid bann
       continue;
     }
     assert.equal(html.match(pattern)?.[0].replace(/\r\n/g, '\n'), template.match(pattern)[0].replace(/\r\n/g, '\n'), file);
-    assert.deepEqual(html.match(/GTM-[A-Z0-9]+/g), ['GTM-PBHM964F'], file);
+    assert.deepEqual(html.match(/GTM-[A-Z0-9]+/g), ['GTM-548SC7SH'], file);
     for (const extension of ['js', 'css']) {
       const links = [...html.matchAll(new RegExp('(?:href|src)="([^"?]*assets/consent\\.' + extension + ')\\?[^" ]+"', 'g'))];
       assert.equal(links.length, 1, file);

@@ -12,7 +12,6 @@
       ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
-    gtag('js', new Date());
     (() => {
       const storageKey = 'vision-altitude-consent-v1';
       const lifetime = 180 * 24 * 60 * 60 * 1000;
@@ -70,10 +69,12 @@
         document.removeEventListener('pointerdown', loadTagManager, true);
         document.removeEventListener('keydown', loadTagManager, true);
         document.removeEventListener('visibilitychange', onVisibilityChange);
+        // Process the consent choice before Analytics initializes its first page view.
+        gtag('js', new Date());
         window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
         const script = document.createElement('script');
         script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBHM964F';
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-548SC7SH';
         document.head.appendChild(script);
       };
       const onVisibilityChange = () => {

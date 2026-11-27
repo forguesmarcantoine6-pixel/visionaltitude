@@ -84,7 +84,7 @@ const server = http.createServer((request, response) => {
       await page.locator('[data-consent-settings]').click();
       await page.locator('[data-consent-accept]').click();
       await page.waitForFunction(() => window.__mockContainerLoaded === true);
-      assert.deepEqual(gtm, ['https://www.googletagmanager.com/gtm.js?id=GTM-PBHM964F']);
+      assert.deepEqual(gtm, ['https://www.googletagmanager.com/gtm.js?id=GTM-548SC7SH']);
       const state = await page.evaluate(key => ({
         saved: JSON.parse(localStorage.getItem(key)), disabled: window['ga-disable-G-J17B9YFL5K'],
         updates: window.dataLayer.filter(entry => entry[0] === 'consent').map(entry => [entry[1], entry[2].analytics_storage]),
